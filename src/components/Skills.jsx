@@ -51,31 +51,25 @@ const Skills = () => {
         // Backend
         { name: 'Node.js', color: 'accent-green', category: 'backend', description: 'Creación de backends y APIs robustas' },
         { name: 'Python', color: 'accent-blue', category: 'backend', description: 'Automatización y ciencia de datos' },
-        { name: 'PostgreSQL', color: 'accent-blue', category: 'backend', description: 'bases de datos relacionales avanzadas' },
+        { name: 'PostgreSQL', color: 'accent-blue', category: 'backend', description: 'Bases de datos relacionales avanzadas' },
         { name: 'MongoDB', color: 'accent-green', category: 'backend', description: 'Base de datos NoSQL flexible y escalable' },
-        { name: 'REST APIs', color: 'accent-blue', category: 'backend', description: 'Diseño e integración de servicios web' },
         { name: 'Express.js', color: 'accent-green', category: 'backend', description: 'Framework web rápido y minimalista' },
 
         // Frontend
         { name: 'React', color: 'accent-blue', category: 'frontend', description: 'Interfaces de usuario interactivas y reactivas' },
         { name: 'JavaScript', color: 'accent-orange', category: 'frontend', description: 'Lógica dinámica del lado del cliente' },
         { name: 'Tailwind CSS', color: 'accent-blue', category: 'frontend', description: 'Estilizado moderno y responsivo' },
-        { name: 'HTML/CSS', color: 'accent-orange', category: 'frontend', description: 'Estructura y diseño web fundamental' },
-        { name: 'Vite', color: 'accent-green', category: 'frontend', description: 'Entorno de desarrollo frontend ultrarrápido' },
         { name: 'Framer Motion', color: 'accent-blue', category: 'frontend', description: 'Animaciones fluidas y complejas' },
 
         // Automation
         { name: 'n8n', color: 'accent-green', category: 'automation', description: 'Automatización de flujos de trabajo potentes' },
         { name: 'Make', color: 'accent-blue', category: 'automation', description: 'Integración visual de aplicaciones' },
         { name: 'Zapier', color: 'accent-orange', category: 'automation', description: 'Conectividad entre apps sin código' },
-        { name: 'Webhooks', color: 'accent-green', category: 'automation', description: 'Eventos en tiempo real entre sistemas' },
 
         // Tools
         { name: 'Git', color: 'accent-orange', category: 'tools', description: 'Control de versiones distribuido' },
         { name: 'Docker', color: 'accent-blue', category: 'tools', description: 'Despliegue de aplicaciones en contenedores' },
-        { name: 'Postman', color: 'accent-orange', category: 'tools', description: 'Pruebas y desarrollo de APIs' },
         { name: 'AWS', color: 'accent-green', category: 'tools', description: 'Servicios en la nube escalables' },
-        { name: 'VS Code', color: 'accent-blue', category: 'tools', description: 'Editor de código potente y extensible' },
     ]
 
     const currentSkills = allSkills.filter(skill => skill.category === activeCategory)
@@ -110,8 +104,8 @@ const Skills = () => {
                                 key={category.id}
                                 onClick={() => setActiveCategory(category.id)}
                                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 border-2 ${activeCategory === category.id
-                                    ? 'bg-gradient-to-r from-accent-blue to-accent-green text-white border-transparent shadow-lg shadow-accent-blue/30'
-                                    : 'bg-card text-text-secondary border-gray-700/50 hover:border-accent-blue/50 hover:text-text-primary'
+                                        ? 'bg-gradient-to-r from-accent-blue to-accent-green text-white border-transparent shadow-lg shadow-accent-blue/30'
+                                        : 'bg-card text-text-secondary border-gray-700/50 hover:border-accent-blue/50 hover:text-text-primary'
                                     }`}
                                 whileHover={{ scale: 1.05, y: -2 }}
                                 whileTap={{ scale: 0.95 }}
