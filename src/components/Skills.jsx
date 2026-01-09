@@ -49,33 +49,40 @@ const Skills = () => {
 
     const allSkills = [
         // Backend
-        { name: 'Node.js', color: 'accent-green', category: 'backend', description: 'Creación de backends y APIs robustas' },
-        { name: 'Python', color: 'accent-blue', category: 'backend', description: 'Automatización y ciencia de datos' },
-        { name: 'PostgreSQL', color: 'accent-blue', category: 'backend', description: 'Bases de datos relacionales avanzadas' },
-        { name: 'MongoDB', color: 'accent-green', category: 'backend', description: 'Base de datos NoSQL flexible y escalable' },
-        { name: 'Express.js', color: 'accent-green', category: 'backend', description: 'Framework web rápido y minimalista' },
+        { name: 'Node.js', color: 'accent-green', category: 'backend', description: 'Entorno de ejecución para JavaScript en servidor' },
+        { name: 'MySQL', color: 'accent-blue', category: 'backend', description: 'Gestión de bases de datos relacionales robustas' },
+        { name: 'PostgreSQL', color: 'accent-blue', category: 'backend', description: 'Base de datos relacional avanzada y potente' },
+        { name: 'MongoDB', color: 'accent-green', category: 'backend', description: 'Base de datos NoSQL para datos flexibles' },
+        { name: 'REST APIs', color: 'accent-orange', category: 'backend', description: 'Diseño de servicios web estándar y escalables' },
 
         // Frontend
-        { name: 'React', color: 'accent-blue', category: 'frontend', description: 'Interfaces de usuario interactivas y reactivas' },
-        { name: 'JavaScript', color: 'accent-orange', category: 'frontend', description: 'Lógica dinámica del lado del cliente' },
-        { name: 'Tailwind CSS', color: 'accent-blue', category: 'frontend', description: 'Estilizado moderno y responsivo' },
-        { name: 'Framer Motion', color: 'accent-blue', category: 'frontend', description: 'Animaciones fluidas y complejas' },
+        { name: 'React', color: 'accent-blue', category: 'frontend', description: 'Biblioteca líder para interfaces de usuario' },
+        { name: 'Vite', color: 'accent-orange', category: 'frontend', description: 'Herramienta de construcción frontend ultrarrápida' },
+        { name: 'JavaScript', color: 'accent-orange', category: 'frontend', description: 'Lenguaje fundamental para la web interactiva' },
+        { name: 'Tailwind CSS', color: 'accent-blue', category: 'frontend', description: 'Framework de utilidades para diseño rápido' },
+        { name: 'HTML & CSS', color: 'accent-orange', category: 'frontend', description: 'Estructura y estilo fundamentales de la web' },
 
         // Automation
-        { name: 'n8n', color: 'accent-green', category: 'automation', description: 'Automatización de flujos de trabajo potentes' },
-        { name: 'Make', color: 'accent-blue', category: 'automation', description: 'Integración visual de aplicaciones' },
-        { name: 'Zapier', color: 'accent-orange', category: 'automation', description: 'Conectividad entre apps sin código' },
+        { name: 'n8n', color: 'accent-green', category: 'automation', description: 'Automatización de flujos de trabajo personalizables' },
+        { name: 'Make', color: 'accent-blue', category: 'automation', description: 'Plataforma visual de integración de apps' },
+        { name: 'Zapier', color: 'accent-orange', category: 'automation', description: 'Conector de aplicaciones web líder' },
+        { name: 'Webhooks', color: 'accent-green', category: 'automation', description: 'Comunicación en tiempo real entre sistemas' },
 
         // Tools
-        { name: 'Git', color: 'accent-orange', category: 'tools', description: 'Control de versiones distribuido' },
-        { name: 'Docker', color: 'accent-blue', category: 'tools', description: 'Despliegue de aplicaciones en contenedores' },
-        { name: 'AWS', color: 'accent-green', category: 'tools', description: 'Servicios en la nube escalables' },
+        { name: 'VS Code', color: 'accent-blue', category: 'tools', description: 'El editor de código más potente y versátil' },
+        { name: 'Git', color: 'accent-orange', category: 'tools', description: 'Sistema de control de versiones esencial' },
+        { name: 'GitHub', color: 'accent-primary', category: 'tools', description: 'Colaboración y alojamiento de código' },
+        { name: 'Postman', color: 'accent-orange', category: 'tools', description: 'Pruebas y desarrollo de APIs' },
+        { name: 'Docker', color: 'accent-blue', category: 'tools', description: 'Contenedores para despliegue consistente' },
+        { name: 'NPM', color: 'accent-green', category: 'tools', description: 'Gestor de paquetes para JavaScript' },
     ]
 
     const currentSkills = allSkills.filter(skill => skill.category === activeCategory)
 
     // Duplicate skills to ensure smooth scrolling loop even with few items
-    const marqueeSkills = [...currentSkills, ...currentSkills, ...currentSkills, ...currentSkills]
+    // If items are few (less than 6), duplicate more times to ensure filling the width
+    const duplicationCount = currentSkills.length < 5 ? 6 : 4
+    const marqueeSkills = Array(duplicationCount).fill(currentSkills).flat()
 
     return (
         <Section id="skills" className="overflow-hidden">
