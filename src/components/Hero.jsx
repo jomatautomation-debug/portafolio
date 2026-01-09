@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Code } from 'lucide-react'
+import { ArrowRight, Code, FileText } from 'lucide-react'
 import Button from './ui/Button'
 import Section from './ui/Section'
 
@@ -169,6 +169,14 @@ const Hero = () => {
                     >
                         <Button href="#projects" variant="primary">
                             Ver Proyectos <ArrowRight size={20} />
+                        </Button>
+                        <Button
+                            href="https://www.canva.com/design/DAG93ehcQk0/DHgvVpOtgqHhge46uY4wfQ/view?utm_content=DAG93ehcQk0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hfec087fb1e"
+                            variant="secondary"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <FileText size={20} /> Ver Hoja de Vida
                         </Button>
                         <Button href="#contact" variant="cta">
                             Contactarme
