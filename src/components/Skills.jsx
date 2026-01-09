@@ -13,11 +13,12 @@ const SkillCard = ({ skill }) => {
             onMouseLeave={() => setIsHovered(false)}
         >
             <motion.div
-                className={`flex-shrink-0 px-8 py-5 bg-card/40 dark:bg-card/40 bg-white/60 backdrop-blur-md rounded-2xl border-2 border-${skill.color}/30 hover:border-${skill.color} transition-all duration-300 cursor-default relative overflow-visible`}
+                className={`flex-shrink-0 px-8 py-5 bg-transparent border-2 border-${skill.color}/50 hover:border-${skill.color} transition-all duration-300 cursor-default relative overflow-visible rounded-2xl`}
                 whileHover={{
                     scale: 1.1,
                     y: -5,
-                    boxShadow: `0 0 20px rgba(var(--color-${skill.color}), 0.4)`
+                    boxShadow: `0 0 20px rgba(var(--color-${skill.color}), 0.4)`,
+                    backgroundColor: `rgba(var(--color-${skill.color}), 0.05)`
                 }}
             >
                 {/* Gradient Background on Hover */}
@@ -111,8 +112,8 @@ const Skills = () => {
                                 key={category.id}
                                 onClick={() => setActiveCategory(category.id)}
                                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 border-2 ${activeCategory === category.id
-                                        ? 'bg-gradient-to-r from-accent-blue to-accent-green text-white border-transparent shadow-lg shadow-accent-blue/30'
-                                        : 'bg-card text-text-secondary border-gray-700/50 hover:border-accent-blue/50 hover:text-text-primary'
+                                    ? 'bg-gradient-to-r from-accent-blue to-accent-green text-white border-transparent shadow-lg shadow-accent-blue/30'
+                                    : 'bg-card text-text-secondary border-gray-700/50 hover:border-accent-blue/50 hover:text-text-primary'
                                     }`}
                                 whileHover={{ scale: 1.05, y: -2 }}
                                 whileTap={{ scale: 0.95 }}
