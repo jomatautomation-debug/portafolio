@@ -1,0 +1,84 @@
+{
+    "nav": {
+        "home": "Inicio",
+        "about": "Sobre Mí",
+        "skills": "Habilidades",
+        "projects": "Proyectos",
+        "certifications": "Certificaciones",
+        "faq": "Preguntas Frecuentes",
+        "contact": "Contacto"
+    },
+    "hero": {
+        "available": "Disponible para trabajar",
+        "name": "José Caballero G.",
+        "title": "Desarrollador de Software Junior – Automatización de Procesos",
+        "description": "Full Stack Developer especializado en automatización con n8n y Make. Integro APIs, webhooks y bases de datos para optimizar procesos empresariales.",
+        "viewProjects": "Ver Proyectos",
+        "viewCV": "Ver Hoja de Vida",
+        "contact": "Contactarme"
+    },
+    "about": {
+        "title": "Sobre Mí",
+        "subtitle": "Conoce más sobre mi trayectoria y pasión por la tecnología",
+        "intro": "Soy un desarrollador apasionado por crear soluciones que realmente impacten en la eficiencia de los negocios.",
+        "traits": {
+            "proactive": {
+                "title": "Proactivo",
+                "description": "Siempre busco oportunidades de mejora y tomo la iniciativa para resolver problemas antes de que se conviertan en obstáculos."
+            },
+            "collaborative": {
+                "title": "Colaborativo",
+                "description": "Me adapto fácilmente a equipos de trabajo, valoro la comunicación abierta y disfruto compartir conocimientos con mis compañeros."
+            },
+            "learner": {
+                "title": "Aprendizaje Continuo",
+                "description": "La tecnología evoluciona constantemente y yo también. Siempre estoy aprendiendo nuevas herramientas y mejores prácticas."
+            }
+        },
+        "availability": "🟢 Disponible para trabajar - Dispuesto a nuevos retos"
+    },
+    "skills": {
+        "title": "Habilidades Técnicas",
+        "subtitle": "Tecnologías y herramientas que domino",
+        "categories": {
+            "backend": "Backend",
+            "frontend": "Frontend",
+            "automation": "Automatización",
+            "tools": "Herramientas"
+        }
+    },
+    "projects": {
+        "title": "Proyectos",
+        "subtitle": "Algunos de los proyectos en los que he trabajado",
+        "viewMore": "Ver Más Proyectos",
+        "viewLess": "Ver Menos",
+        "viewDocs": "Ver Documentación"
+    },
+    "certifications": {
+        "title": "Certificaciones",
+        "subtitle": "Cursos y certificaciones completadas",
+        "viewCert": "Ver Certificado"
+    },
+    "faq": {
+        "title": "Preguntas Frecuentes",
+        "subtitle": "Respuestas a preguntas técnicas comunes en entrevistas"
+    },
+    "contact": {
+        "title": "Contacto",
+        "subtitle": "¿Tienes un proyecto en mente? ¡Hablemos! Estoy disponible para nuevas oportunidades",
+        "info": "Información de Contacto",
+        "email": "Email",
+        "phone": "Teléfono",
+        "social": "Redes Sociales",
+        "form": {
+            "name": "Nombre",
+            "email": "Email",
+            "subject": "Asunto",
+            "message": "Mensaje",
+            "send": "Enviar Mensaje",
+            "sending": "Enviando...",
+            "success": "¡Mensaje enviado con éxito! Te responderé pronto.",
+            "error": "Hubo un error al enviar el mensaje. Intenta de nuevo."
+        }
+    }
+}

@@ -1,0 +1,84 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About Me",
+        "skills": "Skills",
+        "projects": "Projects",
+        "certifications": "Certifications",
+        "faq": "FAQ",
+        "contact": "Contact"
+    },
+    "hero": {
+        "available": "Available for work",
+        "name": "José Caballero G.",
+        "title": "Junior Software Developer – Process Automation",
+        "description": "Full Stack Developer specialized in automation with n8n and Make. I integrate APIs, webhooks, and databases to optimize business processes.",
+        "viewProjects": "View Projects",
+        "viewCV": "View Resume",
+        "contact": "Contact Me"
+    },
+    "about": {
+        "title": "About Me",
+        "subtitle": "Learn more about my journey and passion for technology",
+        "intro": "I'm a developer passionate about creating solutions that truly impact business efficiency.",
+        "traits": {
+            "proactive": {
+                "title": "Proactive",
+                "description": "I always look for improvement opportunities and take initiative to solve problems before they become obstacles."
+            },
+            "collaborative": {
+                "title": "Collaborative",
+                "description": "I easily adapt to work teams, value open communication, and enjoy sharing knowledge with my colleagues."
+            },
+            "learner": {
+                "title": "Continuous Learning",
+                "description": "Technology constantly evolves and so do I. I'm always learning new tools and best practices."
+            }
+        },
+        "availability": "🟢 Available for work - Ready for new challenges"
+    },
+    "skills": {
+        "title": "Technical Skills",
+        "subtitle": "Technologies and tools I master",
+        "categories": {
+            "backend": "Backend",
+            "frontend": "Frontend",
+            "automation": "Automation",
+            "tools": "Tools"
+        }
+    },
+    "projects": {
+        "title": "Projects",
+        "subtitle": "Some of the projects I've worked on",
+        "viewMore": "View More Projects",
+        "viewLess": "View Less",
+        "viewDocs": "View Documentation"
+    },
+    "certifications": {
+        "title": "Certifications",
+        "subtitle": "Completed courses and certifications",
+        "viewCert": "View Certificate"
+    },
+    "faq": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "Answers to common technical interview questions"
+    },
+    "contact": {
+        "title": "Contact",
+        "subtitle": "Have a project in mind? Let's talk! I'm available for new opportunities",
+        "info": "Contact Information",
+        "email": "Email",
+        "phone": "Phone",
+        "social": "Social Media",
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "subject": "Subject",
+            "message": "Message",
+            "send": "Send Message",
+            "sending": "Sending...",
+            "success": "Message sent successfully! I'll reply soon.",
+            "error": "There was an error sending the message. Please try again."
+        }
+    }
+}

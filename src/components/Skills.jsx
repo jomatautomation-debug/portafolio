@@ -1,66 +1,54 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Server, Code, Zap, Wrench } from 'lucide-react'
 import Section from './ui/Section'
 
 const Skills = () => {
-    const [activeTooltip, setActiveTooltip] = useState(null)
+    const [activeCategory, setActiveCategory] = useState('backend')
 
-    const handleSkillClick = (skillName) => {
-        setActiveTooltip(activeTooltip === skillName ? null : skillName)
+    const categories = [
+        { id: 'backend', name: 'Backend', icon: Server },
+        { id: 'frontend', name: 'Frontend', icon: Code },
+        { id: 'automation', name: 'Automatización', icon: Zap },
+        { id: 'tools', name: 'Herramientas', icon: Wrench }
+    ]
+
+    const skillsByCategory = {
+        backend: [
+            { name: 'Node.js', level: 85, color: 'accent-green' },
+            { name: 'Python', level: 70, color: 'accent-blue' },
+            { name: 'PostgreSQL', level: 80, color: 'accent-blue' },
+            { name: 'MongoDB', level: 75, color: 'accent-green' },
+            { name: 'REST APIs', level: 90, color: 'accent-blue' },
+            { name: 'Express.js', level: 80, color: 'accent-green' }
+        ],
+        frontend: [
+            { name: 'React', level: 85, color: 'accent-blue' },
+            { name: 'JavaScript', level: 90, color: 'accent-orange' },
+            { name: 'Tailwind CSS', level: 85, color: 'accent-blue' },
+            { name: 'HTML/CSS', level: 90, color: 'accent-orange' },
+            { name: 'Vite', level: 75, color: 'accent-green' },
+            { name: 'Framer Motion', level: 70, color: 'accent-blue' }
+        ],
+        automation: [
+            { name: 'n8n', level: 90, color: 'accent-green' },
+            { name: 'Make (Integromat)', level: 85, color: 'accent-blue' },
+            { name: 'Zapier', level: 80, color: 'accent-orange' },
+            { name: 'Webhooks', level: 90, color: 'accent-green' },
+            { name: 'API Integration', level: 90, color: 'accent-blue' },
+            { name: 'Workflow Design', level: 85, color: 'accent-green' }
+        ],
+        tools: [
+            { name: 'Git/GitHub', level: 85, color: 'accent-orange' },
+            { name: 'Docker', level: 70, color: 'accent-blue' },
+            { name: 'Postman', level: 85, color: 'accent-orange' },
+            { name: 'VS Code', level: 90, color: 'accent-blue' },
+            { name: 'AWS (básico)', level: 65, color: 'accent-green' },
+            { name: 'Vercel/Netlify', level: 80, color: 'accent-blue' }
+        ]
     }
 
-    const skills = [
-        {
-            name: 'Automatización (n8n, Make)',
-            color: 'accent-blue',
-            description: 'Diseño e implementación de flujos automatizados para optimizar procesos empresariales y administrativos'
-        },
-        {
-            name: 'Integración de APIs / Webhooks',
-            color: 'accent-green',
-            description: 'Integración de plataformas mediante APIs REST y Webhooks para sincronización de datos en tiempo real'
-        },
-        {
-            name: 'React',
-            color: 'accent-blue',
-            description: 'Desarrollo de interfaces web modernas y sistemas internos con componentes reutilizables'
-        },
-        {
-            name: 'Node.js',
-            color: 'accent-green',
-            description: 'Creación de backends y APIs para gestión de datos y procesos automatizados'
-        },
-        {
-            name: 'SQL',
-            color: 'accent-blue',
-            description: 'Gestión de bases de datos relacionales para almacenamiento y consulta de información'
-        },
-        {
-            name: 'Git/GitHub',
-            color: 'accent-orange',
-            description: 'Control de versiones y colaboración en proyectos de desarrollo de software'
-        },
-        {
-            name: 'JSON',
-            color: 'accent-blue',
-            description: 'Manejo y transformación de datos en formato JSON para integración de sistemas'
-        },
-        {
-            name: 'REST APIs',
-            color: 'accent-green',
-            description: 'Consumo y creación de APIs RESTful para comunicación entre aplicaciones'
-        },
-        {
-            name: 'Testing básico / Validación de flujos',
-            color: 'accent-blue',
-            description: 'Pruebas y validación de flujos automatizados para garantizar funcionamiento correcto'
-        },
-        {
-            name: 'AWS Cloud (básico)',
-            color: 'accent-orange',
-            description: 'Conocimientos fundamentales de servicios cloud de AWS y arquitecturas en la nube'
-        },
-    ]
+    const currentSkills = skillsByCategory[activeCategory]
 
     return (
         <Section id="skills">
@@ -73,72 +61,66 @@ const Skills = () => {
             >
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
                     <span className="bg-gradient-to-r from-accent-blue to-accent-green bg-clip-text text-transparent">
-                        Habilidades
+                        Habilidades Técnicas
                     </span>
                 </h2>
                 <p className="text-text-secondary mb-12 max-w-2xl mx-auto">
                     Tecnologías y herramientas con las que trabajo para crear soluciones eficientes
                 </p>
 
-                <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-                    {skills.map((skill, index) => (
+                {/* Category Tabs */}
+                <div className="flex flex-wrap justify-center gap-4 mb-12">
+                    {categories.map((category) => {
+                        const Icon = category.icon
+                        return (
+                            <motion.button
+                                key={category.id}
+                                onClick={() => setActiveCategory(category.id)}
+                                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 ${activeCategory === category.id
+                                        ? 'bg-gradient-to-r from-accent-blue to-accent-green text-white shadow-lg shadow-accent-blue/50'
+                                        : 'bg-card text-text-secondary hover:bg-card/80 border border-gray-800'
+                                    }`}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <Icon size={20} />
+                                {category.name}
+                            </motion.button>
+                        )
+                    })}
+                </div>
+
+                {/* Skills Grid */}
+                <motion.div
+                    key={activeCategory}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto"
+                >
+                    {currentSkills.map((skill, index) => (
                         <motion.div
                             key={skill.name}
-                            initial={{ opacity: 0, scale: 0.8, rotateY: -180 }}
-                            whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
-                            viewport={{ once: true }}
-                            transition={{
-                                duration: 0.4,
-                                delay: index * 0.03,
-                                type: "spring",
-                                stiffness: 150
-                            }}
-                            whileHover={{
-                                scale: 1.15,
-                                y: -10,
-                                rotateY: 5,
-                                rotateX: 5,
-                                transition: { duration: 0.2 }
-                            }}
-                            onClick={() => handleSkillClick(skill.name)}
-                            className="relative group perspective-1000 cursor-pointer"
-                            style={{ transformStyle: 'preserve-3d' }}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.4, delay: index * 0.1 }}
+                            className="bg-card p-6 rounded-lg border border-gray-800 hover:border-accent-blue/50 transition-all"
                         >
-                            <motion.div
-                                className={`px-6 py-3 bg-gradient-to-br from-card to-card/50 rounded-full border-2 border-${skill.color}/50 hover:border-${skill.color} transition-all duration-150 cursor-pointer shadow-lg backdrop-blur-sm relative overflow-hidden ${activeTooltip === skill.name ? 'border-accent-blue scale-110' : ''}`}
-                                whileHover={{
-                                    boxShadow: '0 0 25px rgba(59, 130, 246, 0.6), 0 0 50px rgba(59, 130, 246, 0.3)'
-                                }}
-                            >
-                                {/* Animated gradient overlay */}
+                            <div className="flex justify-between items-center mb-3">
+                                <span className="text-white font-semibold">{skill.name}</span>
+                                <span className="text-accent-blue font-bold">{skill.level}%</span>
+                            </div>
+                            <div className="w-full bg-background rounded-full h-3 overflow-hidden">
                                 <motion.div
-                                    className="absolute inset-0 bg-gradient-to-r from-accent-blue/20 via-accent-green/20 to-accent-orange/20 opacity-0 group-hover:opacity-100"
-                                    animate={{
-                                        x: ['-100%', '100%']
-                                    }}
-                                    transition={{
-                                        duration: 1.5,
-                                        repeat: Infinity,
-                                        ease: "linear"
-                                    }}
+                                    initial={{ width: 0 }}
+                                    animate={{ width: `${skill.level}%` }}
+                                    transition={{ duration: 1, delay: index * 0.1 }}
+                                    className={`h-full bg-gradient-to-r from-accent-blue to-accent-green rounded-full`}
                                 />
-                                <span className="text-text-primary font-medium relative z-10">{skill.name}</span>
-                            </motion.div>
-
-                            {/* Enhanced Tooltip - Shows on hover (desktop) or click (mobile) */}
-                            <div className={`absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 px-4 py-3 bg-gradient-to-br from-card to-card/90 border-2 border-accent-blue/70 rounded-lg shadow-2xl transition-all duration-150 pointer-events-none w-72 z-50 backdrop-blur-md ${activeTooltip === skill.name ? 'opacity-100 visible' : 'opacity-0 invisible group-hover:opacity-100 group-hover:visible'
-                                }`}>
-                                <p className="text-text-primary text-sm text-center leading-relaxed font-medium">
-                                    {skill.description}
-                                </p>
-                                {/* Glowing Arrow */}
-                                <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-2">
-                                    <div className="border-[10px] border-transparent border-t-card drop-shadow-[0_2px_8px_rgba(59,130,246,0.5)]"></div>
-                                </div>
                             </div>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </motion.div>
         </Section>
     )
