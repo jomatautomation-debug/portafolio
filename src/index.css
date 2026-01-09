@@ -10,18 +10,29 @@
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background-color: #0F172A;
-  color: #E5E7EB;
   overflow-x: hidden;
   position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme (default) */
+[data-theme="dark"] body {
+  background-color: #0F172A;
+  color: #E5E7EB;
+}
+
+/* Light theme */
+[data-theme="light"] body {
+  background-color: #F8FAFC;
+  color: #1E293B;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Animated gradient background */
-body::before {
+/* Animated gradient background - Dark */
+[data-theme="dark"] body::before {
   content: '';
   position: fixed;
   top: 0;
@@ -31,6 +42,22 @@ body::before {
   background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 40% 20%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
+  animation: gradientShift 15s ease infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Animated gradient background - Light */
+[data-theme="light"] body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(34, 197, 94, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(245, 158, 11, 0.03) 0%, transparent 50%);
   animation: gradientShift 15s ease infinite;
   pointer-events: none;
   z-index: 0;

@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Sun, Moon } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTheme } from '../contexts/ThemeContext'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [scrolled, setScrolled] = useState(false)
+    const { theme, toggleTheme } = useTheme()
 
     useEffect(() => {
         const handleScroll = () => {
@@ -66,6 +68,21 @@ const Navbar = () => {
                                 {link.name}
                             </motion.a>
                         ))}
+
+                        {/* Theme Toggle Button */}
+                        <motion.button
+                            onClick={toggleTheme}
+                            className="p-2 rounded-lg bg-card border border-gray-800 hover:border-accent-blue transition-all hover:scale-110"
+                            whileHover={{ rotate: 180 }}
+                            transition={{ duration: 0.3 }}
+                            title={theme === 'dark' ? 'Modo Claro' : 'Modo Oscuro'}
+                        >
+                            {theme === 'dark' ? (
+                                <Sun className="text-accent-orange" size={20} />
+                            ) : (
+                                <Moon className="text-accent-blue" size={20} />
+                            )}
+                        </motion.button>
                     </div>
 
                     {/* Mobile Menu Button */}
