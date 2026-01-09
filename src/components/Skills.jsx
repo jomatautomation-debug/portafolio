@@ -110,8 +110,8 @@ const Skills = () => {
                                 key={category.id}
                                 onClick={() => setActiveCategory(category.id)}
                                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 border-2 ${activeCategory === category.id
-                                        ? 'bg-gradient-to-r from-accent-blue to-accent-green text-white border-transparent shadow-lg shadow-accent-blue/30'
-                                        : 'bg-card text-text-secondary border-gray-700/50 hover:border-accent-blue/50 hover:text-text-primary'
+                                    ? 'bg-gradient-to-r from-accent-blue to-accent-green text-white border-transparent shadow-lg shadow-accent-blue/30'
+                                    : 'bg-card text-text-secondary border-gray-700/50 hover:border-accent-blue/50 hover:text-text-primary'
                                     }`}
                                 whileHover={{ scale: 1.05, y: -2 }}
                                 whileTap={{ scale: 0.95 }}
@@ -125,13 +125,13 @@ const Skills = () => {
             </motion.div>
 
             {/* Infinite Marquee Container */}
-            <div className="relative w-full py-10">
-                {/* Mask for fading edges */}
-                <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background to-transparent z-20 pointer-events-none" />
-                <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background to-transparent z-20 pointer-events-none" />
+            <div className="relative w-full py-24 overflow-visible">
+                {/* Mask for fading edges - adjusted for larger height */}
+                <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background via-background/80 to-transparent z-20 pointer-events-none" />
+                <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background via-background/80 to-transparent z-20 pointer-events-none" />
 
                 <div
-                    className="flex overflow-hidden group"
+                    className="flex overflow-visible group"
                 // Inline style for marquee animation to allow easy speed adjustment
                 >
                     <div
