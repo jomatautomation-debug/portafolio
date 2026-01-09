@@ -97,13 +97,13 @@ const FAQ = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: index * 0.1 }}
-                        className="bg-card border border-gray-800 rounded-lg overflow-hidden hover:border-accent-blue/50 transition-all"
+                        className="bg-card border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden hover:border-accent-blue/50 transition-all"
                     >
                         <button
                             onClick={() => toggleQuestion(index)}
-                            className="w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-white/5 transition-colors"
+                            className="w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
                         >
-                            <h3 className="text-lg font-semibold text-white">
+                            <h3 className="text-lg font-semibold text-text-primary">
                                 {faq.question}
                             </h3>
                             <motion.div

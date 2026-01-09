@@ -34,7 +34,7 @@ const About = () => {
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-green opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-3 w-3 bg-accent-green"></span>
                     </span>
-                    <span className="text-white font-semibold">Disponible para trabajar - Dispuesto a nuevos retos</span>
+                    <span className="text-gray-800 dark:text-white font-semibold">Disponible para trabajar - Dispuesto a nuevos retos</span>
                 </motion.div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mt-8">
