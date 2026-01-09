@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webhook Tester & Logger | José Caballero</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#0a0e1a',
+                        card: '#141b2d',
+                        'accent-blue': '#3B82F6',
+                        'accent-green': '#22C55E',
+                        'accent-orange': '#F59E0B',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1f35 100%);
+            min-height: 100vh;
+        }
+
+        .json-key {
+            color: #22C55E;
+        }
+
+        .json-string {
+            color: #F59E0B;
+        }
+
+        .json-number {
+            color: #3B82F6;
+        }
+
+        .json-boolean {
+            color: #A78BFA;
+        }
+    </style>
+</head>
+
+<body class="text-white">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        function WebhookTester() {
+            const [webhooks, setWebhooks] = useState([]);
+            const [selectedWebhook, setSelectedWebhook] = useState(null);
+            const [copied, setCopied] = useState(false);
+
+            const webhookUrl = `${window.location.origin}/api/webhook/${Math.random().toString(36).substr(2, 9)}`;
+
+            const generateTestWebhook = () => {
+                const mockPayloads = [
+                    {
+                        event: 'user.created',
+                        data: {
+                            id: Math.floor(Math.random() * 1000),
+                            name: 'Juan Pérez',
+                            email: 'juan@example.com',
+                            role: 'developer'
+                        },
+                        timestamp: new Date().toISOString()
+                    },
+                    {
+                        event: 'payment.success',
+                        data: {
+                            transaction_id: `TXN${Math.floor(Math.random() * 10000)}`,
+                            amount: 99.99,
+                            currency: 'USD',
+                            customer: 'customer_123'
+                        },
+                        timestamp: new Date().toISOString()
+                    },
+                    {
+                        event: 'task.completed',
+                        data: {
+                            task_id: Math.floor(Math.random() * 100),
+                            title: 'Configurar webhook en n8n',
+                            status: 'completed',
+                            completed_by: 'José Caballero'
+                        },
+                        timestamp: new Date().toISOString()
+                    }
+                ];
+
+                const randomPayload = mockPayloads[Math.floor(Math.random() * mockPayloads.length)];
+                const webhook = {
+                    id: Date.now(),
+                    ...randomPayload,
+                    receivedAt: new Date().toISOString()
+                };
+
+                setWebhooks([webhook, ...webhooks]);
+                setSelectedWebhook(webhook);
+            };
+
+            const formatJSON = (obj) => {
+                return JSON.stringify(obj, null, 2);
+            };
+
+            const copyToClipboard = (text) => {
+                navigator.clipboard.writeText(text);
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000);
+            };
+
+            const clearHistory = () => {
+                setWebhooks([]);
+                setSelectedWebhook(null);
+            };
+
+            return (
+                <div className="min-h-screen p-4 md:p-8">
+                    <div className="max-w-7xl mx-auto">
+                        {/* Header */}
+                        <div className="mb-8">
+                            <a href="/" className="text-accent-blue hover:text-accent-green transition-colors mb-4 inline-block">
+                                ← Volver al Portafolio
+                            </a>
+                            <h1 className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-accent-blue to-accent-green bg-clip-text text-transparent">
+                                Webhook Tester & Logger
+                            </h1>
+                            <p className="text-gray-400">Prueba y visualiza webhooks en tiempo real</p>
+                        </div>
+
+                        {/* Webhook URL */}
+                        <div className="bg-card p-6 rounded-xl border border-gray-700 mb-6">
+                            <label className="block text-sm font-medium mb-2 text-gray-400">Tu Webhook URL (Demo)</label>
+                            <div className="flex gap-2">
+                                <input
+                                    type="text"
+                                    value={webhookUrl}
+                                    readOnly
+                                    className="flex-1 bg-background border border-gray-700 rounded-lg px-4 py-3 text-white font-mono text-sm"
+                                />
+                                <button
+                                    onClick={() => copyToClipboard(webhookUrl)}
+                                    className="bg-accent-blue px-6 py-3 rounded-lg font-medium hover:bg-accent-blue/80 transition-all"
+                                >
+                                    {copied ? '✓ Copiado' : 'Copiar'}
+                                </button>
+                            </div>
+                            <p className="text-xs text-gray-500 mt-2">
+                                💡 Nota: Esta es una demo. Usa el botón "Generar Webhook de Prueba" para simular webhooks entrantes.
+                            </p>
+                        </div>
+
+                        {/* Actions */}
+                        <div className="flex gap-4 mb-6">
+                            <button
+                                onClick={generateTestWebhook}
+                                className="bg-gradient-to-r from-accent-blue to-accent-green px-6 py-3 rounded-lg font-medium hover:shadow-lg hover:shadow-accent-blue/50 transition-all"
+                            >
+                                🚀 Generar Webhook de Prueba
+                            </button>
+                            <button
+                                onClick={clearHistory}
+                                className="bg-red-500/20 text-red-500 px-6 py-3 rounded-lg hover:bg-red-500/30 transition-all"
+                            >
+                                🗑️ Limpiar Historial
+                            </button>
+                        </div>
+
+                        {/* Stats */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                            <div className="bg-card p-4 rounded-xl border border-gray-700">
+                                <div className="text-2xl font-bold text-accent-blue">{webhooks.length}</div>
+                                <div className="text-sm text-gray-400">Webhooks Recibidos</div>
+                            </div>
+                            <div className="bg-card p-4 rounded-xl border border-gray-700">
+                                <div className="text-2xl font-bold text-accent-green">
+                                    {webhooks.filter(w => w.event === 'payment.success').length}
+                                </div>
+                                <div className="text-sm text-gray-400">Pagos</div>
+                            </div>
+                            <div className="bg-card p-4 rounded-xl border border-gray-700">
+                                <div className="text-2xl font-bold text-accent-orange">
+                                    {webhooks.filter(w => w.event === 'user.created').length}
+                                </div>
+                                <div className="text-sm text-gray-400">Usuarios Creados</div>
+                            </div>
+                        </div>
+
+                        {/* Main Content */}
+                        <div className="grid md:grid-cols-2 gap-6">
+                            {/* History */}
+                            <div className="bg-card p-6 rounded-xl border border-gray-700">
+                                <h2 className="text-xl font-bold mb-4">Historial de Webhooks</h2>
+                                <div className="space-y-2 max-h-[600px] overflow-y-auto">
+                                    {webhooks.length === 0 ? (
+                                        <div className="text-center text-gray-400 py-8">
+                                            No hay webhooks aún. Genera uno de prueba para empezar.
+                                        </div>
+                                    ) : (
+                                        webhooks.map(webhook => (
+                                            <div
+                                                key={webhook.id}
+                                                onClick={() => setSelectedWebhook(webhook)}
+                                                className={`p-4 rounded-lg cursor-pointer transition-all ${selectedWebhook?.id === webhook.id
+                                                        ? 'bg-accent-blue/20 border border-accent-blue'
+                                                        : 'bg-background hover:bg-background/50 border border-gray-700'
+                                                    }`}
+                                            >
+                                                <div className="flex items-center justify-between mb-2">
+                                                    <span className="font-semibold text-accent-green">{webhook.event}</span>
+                                                    <span className="text-xs text-gray-500">
+                                                        {new Date(webhook.receivedAt).toLocaleTimeString()}
+                                                    </span>
+                                                </div>
+                                                <div className="text-xs text-gray-400">
+                                                    ID: {webhook.id}
+                                                </div>
+                                            </div>
+                                        ))
+                                    )}
+                                </div>
+                            </div>
+
+                            {/* Payload Viewer */}
+                            <div className="bg-card p-6 rounded-xl border border-gray-700">
+                                <div className="flex items-center justify-between mb-4">
+                                    <h2 className="text-xl font-bold">Payload</h2>
+                                    {selectedWebhook && (
+                                        <button
+                                            onClick={() => copyToClipboard(formatJSON(selectedWebhook))}
+                                            className="text-sm bg-accent-blue/20 text-accent-blue px-4 py-2 rounded-lg hover:bg-accent-blue/30 transition-all"
+                                        >
+                                            {copied ? '✓ Copiado' : 'Copiar JSON'}
+                                        </button>
+                                    )}
+                                </div>
+                                {selectedWebhook ? (
+                                    <pre className="bg-background p-4 rounded-lg overflow-x-auto text-sm font-mono max-h-[600px] overflow-y-auto border border-gray-700">
+                                        {formatJSON(selectedWebhook)}
+                                    </pre>
+                                ) : (
+                                    <div className="text-center text-gray-400 py-8">
+                                        Selecciona un webhook del historial para ver su payload
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<WebhookTester />, document.getElementById('root'));
+    </script>
+</body>
+
+</html>

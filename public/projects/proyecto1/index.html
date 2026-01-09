@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Automation Dashboard | José Caballero</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#0a0e1a',
+                        card: '#141b2d',
+                        'accent-blue': '#3B82F6',
+                        'accent-green': '#22C55E',
+                        'accent-orange': '#F59E0B',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1f35 100%);
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body class="text-white">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        function TaskDashboard() {
+            const [tasks, setTasks] = useState([]);
+            const [filter, setFilter] = useState('all');
+            const [search, setSearch] = useState('');
+            const [newTask, setNewTask] = useState('');
+            const [editingId, setEditingId] = useState(null);
+
+            // Load tasks from localStorage
+            useEffect(() => {
+                const savedTasks = localStorage.getItem('tasks');
+                if (savedTasks) {
+                    setTasks(JSON.parse(savedTasks));
+                } else {
+                    // Demo tasks
+                    const demoTasks = [
+                        { id: 1, title: 'Configurar webhook en n8n', status: 'completed', createdAt: new Date().toISOString() },
+                        { id: 2, title: 'Integrar API de Stripe', status: 'in-progress', createdAt: new Date().toISOString() },
+                        { id: 3, title: 'Crear flujo de automatización', status: 'pending', createdAt: new Date().toISOString() },
+                    ];
+                    setTasks(demoTasks);
+                }
+            }, []);
+
+            // Save to localStorage
+            useEffect(() => {
+                if (tasks.length > 0) {
+                    localStorage.setItem('tasks', JSON.stringify(tasks));
+                }
+            }, [tasks]);
+
+            const addTask = () => {
+                if (!newTask.trim()) return;
+                const task = {
+                    id: Date.now(),
+                    title: newTask,
+                    status: 'pending',
+                    createdAt: new Date().toISOString()
+                };
+                setTasks([...tasks, task]);
+                setNewTask('');
+            };
+
+            const deleteTask = (id) => {
+                setTasks(tasks.filter(t => t.id !== id));
+            };
+
+            const updateStatus = (id, newStatus) => {
+                setTasks(tasks.map(t => t.id === id ? { ...t, status: newStatus } : t));
+            };
+
+            const filteredTasks = tasks.filter(task => {
+                const matchesFilter = filter === 'all' || task.status === filter;
+                const matchesSearch = task.title.toLowerCase().includes(search.toLowerCase());
+                return matchesFilter && matchesSearch;
+            });
+
+            const stats = {
+                total: tasks.length,
+                pending: tasks.filter(t => t.status === 'pending').length,
+                inProgress: tasks.filter(t => t.status === 'in-progress').length,
+                completed: tasks.filter(t => t.status === 'completed').length,
+            };
+
+            return (
+                <div className="min-h-screen p-4 md:p-8">
+                    <div className="max-w-6xl mx-auto">
+                        {/* Header */}
+                        <div className="mb-8">
+                            <a href="/" className="text-accent-blue hover:text-accent-green transition-colors mb-4 inline-block">
+                                ← Volver al Portafolio
+                            </a>
+                            <h1 className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-accent-blue to-accent-green bg-clip-text text-transparent">
+                                Task Automation Dashboard
+                            </h1>
+                            <p className="text-gray-400">Gestiona tus tareas de automatización de forma eficiente</p>
+                        </div>
+
+                        {/* Stats */}
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                            <div className="bg-card p-4 rounded-xl border border-gray-700">
+                                <div className="text-2xl font-bold text-accent-blue">{stats.total}</div>
+                                <div className="text-sm text-gray-400">Total</div>
+                            </div>
+                            <div className="bg-card p-4 rounded-xl border border-gray-700">
+                                <div className="text-2xl font-bold text-accent-orange">{stats.pending}</div>
+                                <div className="text-sm text-gray-400">Pendientes</div>
+                            </div>
+                            <div className="bg-card p-4 rounded-xl border border-gray-700">
+                                <div className="text-2xl font-bold text-accent-blue">{stats.inProgress}</div>
+                                <div className="text-sm text-gray-400">En Progreso</div>
+                            </div>
+                            <div className="bg-card p-4 rounded-xl border border-gray-700">
+                                <div className="text-2xl font-bold text-accent-green">{stats.completed}</div>
+                                <div className="text-sm text-gray-400">Completadas</div>
+                            </div>
+                        </div>
+
+                        {/* Add Task */}
+                        <div className="bg-card p-6 rounded-xl border border-gray-700 mb-6">
+                            <div className="flex gap-2">
+                                <input
+                                    type="text"
+                                    value={newTask}
+                                    onChange={(e) => setNewTask(e.target.value)}
+                                    onKeyPress={(e) => e.key === 'Enter' && addTask()}
+                                    placeholder="Nueva tarea de automatización..."
+                                    className="flex-1 bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent-blue transition-colors"
+                                />
+                                <button
+                                    onClick={addTask}
+                                    className="bg-gradient-to-r from-accent-blue to-accent-green px-6 py-3 rounded-lg font-medium hover:shadow-lg hover:shadow-accent-blue/50 transition-all"
+                                >
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Filters */}
+                        <div className="bg-card p-6 rounded-xl border border-gray-700 mb-6">
+                            <div className="flex flex-col md:flex-row gap-4">
+                                <input
+                                    type="text"
+                                    value={search}
+                                    onChange={(e) => setSearch(e.target.value)}
+                                    placeholder="Buscar tareas..."
+                                    className="flex-1 bg-background border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-accent-blue transition-colors"
+                                />
+                                <div className="flex gap-2">
+                                    {['all', 'pending', 'in-progress', 'completed'].map(f => (
+                                        <button
+                                            key={f}
+                                            onClick={() => setFilter(f)}
+                                            className={`px-4 py-2 rounded-lg font-medium transition-all ${filter === f
+                                                    ? 'bg-accent-blue text-white'
+                                                    : 'bg-background text-gray-400 hover:text-white'
+                                                }`}
+                                        >
+                                            {f === 'all' ? 'Todas' : f === 'pending' ? 'Pendientes' : f === 'in-progress' ? 'En Progreso' : 'Completadas'}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Tasks List */}
+                        <div className="space-y-4">
+                            {filteredTasks.length === 0 ? (
+                                <div className="bg-card p-8 rounded-xl border border-gray-700 text-center text-gray-400">
+                                    No hay tareas que mostrar
+                                </div>
+                            ) : (
+                                filteredTasks.map(task => (
+                                    <div key={task.id} className="bg-card p-6 rounded-xl border border-gray-700 hover:border-accent-blue/50 transition-all">
+                                        <div className="flex items-center justify-between gap-4">
+                                            <div className="flex-1">
+                                                <h3 className="text-lg font-semibold mb-2">{task.title}</h3>
+                                                <div className="flex gap-2 items-center">
+                                                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${task.status === 'completed' ? 'bg-accent-green/20 text-accent-green' :
+                                                            task.status === 'in-progress' ? 'bg-accent-blue/20 text-accent-blue' :
+                                                                'bg-accent-orange/20 text-accent-orange'
+                                                        }`}>
+                                                        {task.status === 'completed' ? 'Completada' : task.status === 'in-progress' ? 'En Progreso' : 'Pendiente'}
+                                                    </span>
+                                                    <span className="text-xs text-gray-500">
+                                                        {new Date(task.createdAt).toLocaleDateString()}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex gap-2">
+                                                <select
+                                                    value={task.status}
+                                                    onChange={(e) => updateStatus(task.id, e.target.value)}
+                                                    className="bg-background border border-gray-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-accent-blue"
+                                                >
+                                                    <option value="pending">Pendiente</option>
+                                                    <option value="in-progress">En Progreso</option>
+                                                    <option value="completed">Completada</option>
+                                                </select>
+                                                <button
+                                                    onClick={() => deleteTask(task.id)}
+                                                    className="bg-red-500/20 text-red-500 px-4 py-2 rounded-lg hover:bg-red-500/30 transition-colors"
+                                                >
+                                                    Eliminar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))
+                            )}
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<TaskDashboard />, document.getElementById('root'));
+    </script>
+</body>
+
+</html>
