@@ -239,12 +239,21 @@ html {
   width: max-content;
 }
 
+.animate-scroll-slow {
+  animation: scroll 80s linear infinite;
+  width: max-content;
+}
+
 .animate-scroll-reverse {
   animation: scroll-reverse 40s linear infinite;
   width: max-content;
 }
 
-.animate-scroll-normal:hover,
-.animate-scroll-reverse:hover {
+.group-hover\:paused:hover {
+  animation-play-state: paused;
+}
+
+/* Ensure child elements also pause if needed, though usually on container is enough */
+.group:hover .animate-scroll-slow {
   animation-play-state: paused;
 }
