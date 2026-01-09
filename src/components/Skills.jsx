@@ -125,22 +125,24 @@ const Skills = () => {
             </motion.div>
 
             {/* Infinite Marquee Container */}
-            <div className="relative w-full py-24 overflow-visible">
+            <div className="relative w-full max-w-6xl mx-auto py-24 overflow-visible">
                 {/* Mask for fading edges - adjusted width */}
-                <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-background to-transparent z-20 pointer-events-none" />
-                <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-background to-transparent z-20 pointer-events-none" />
+                <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent z-20 pointer-events-none" />
+                <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-20 pointer-events-none" />
 
-                <div
-                    className="flex overflow-visible group"
-                // Inline style for marquee animation to allow easy speed adjustment
-                >
+                <div className="overflow-hidden rounded-xl">
                     <div
-                        className="flex gap-8 animate-scroll-slow group-hover:paused pl-8 items-center"
-                        style={{ width: 'max-content' }}
+                        className="flex overflow-visible group"
+                    // Inline style for marquee animation to allow easy speed adjustment
                     >
-                        {marqueeSkills.map((skill, index) => (
-                            <SkillCard key={`${skill.name}-${index}`} skill={skill} />
-                        ))}
+                        <div
+                            className="flex gap-8 animate-scroll-slow group-hover:paused pl-8 items-center"
+                            style={{ width: 'max-content' }}
+                        >
+                            {marqueeSkills.map((skill, index) => (
+                                <SkillCard key={`${skill.name}-${index}`} skill={skill} />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
