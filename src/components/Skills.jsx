@@ -125,12 +125,12 @@ const Skills = () => {
             </motion.div>
 
             {/* Infinite Marquee Container */}
-            <div className="relative w-full max-w-6xl mx-auto py-24 overflow-visible">
+            <div className="relative w-full max-w-6xl mx-auto">
                 {/* Mask for fading edges - adjusted width */}
                 <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent z-20 pointer-events-none" />
                 <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-20 pointer-events-none" />
 
-                <div className="overflow-hidden rounded-xl">
+                <div className="overflow-hidden rounded-xl py-24">
                     <div
                         className="flex overflow-visible group"
                     // Inline style for marquee animation to allow easy speed adjustment
