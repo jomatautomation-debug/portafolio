@@ -7,10 +7,10 @@ export default {
     theme: {
         extend: {
             colors: {
-                background: '#0F172A',
-                card: '#111827',
-                'text-primary': '#E5E7EB',
-                'text-secondary': '#94A3B8',
+                background: 'var(--bg-background)',
+                card: 'var(--bg-card)',
+                'text-primary': 'var(--text-primary)',
+                'text-secondary': 'var(--text-secondary)',
                 'accent-blue': '#3B82F6',
                 'accent-green': '#22C55E',
                 'accent-orange': '#F59E0B',

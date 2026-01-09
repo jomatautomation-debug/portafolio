@@ -8,23 +8,27 @@
   box-sizing: border-box;
 }
 
+:root {
+  --text-primary: #1E293B;
+  --text-secondary: #475569;
+  --bg-background: #F8FAFC;
+  --bg-card: #FFFFFF;
+}
+
+[data-theme="dark"] {
+  --text-primary: #E5E7EB;
+  --text-secondary: #94A3B8;
+  --bg-background: #0F172A;
+  --bg-card: #111827;
+}
+
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   position: relative;
   transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Dark theme (default) */
-[data-theme="dark"] body {
-  background-color: #0F172A;
-  color: #E5E7EB;
-}
-
-/* Light theme */
-[data-theme="light"] body {
-  background-color: #F8FAFC;
-  color: #1E293B;
+  background-color: var(--bg-background);
+  color: var(--text-primary);
 }
 
 html {
@@ -208,6 +212,39 @@ html {
   }
 }
 
-.pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+
+/* Marquee Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-normal {
+  animation: scroll 40s linear infinite;
+  width: max-content;
+}
+
+.animate-scroll-reverse {
+  animation: scroll-reverse 40s linear infinite;
+  width: max-content;
+}
+
+.animate-scroll-normal:hover,
+.animate-scroll-reverse:hover {
+  animation-play-state: paused;
 }
