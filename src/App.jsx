@@ -8,8 +8,11 @@ import Experience from './components/Experience'
 import Certifications from './components/Certifications'
 import FAQ from './components/FAQ'
 import Contact from './components/Contact'
+import { useLanguage } from './contexts/LanguageContext'
 
 function App() {
+    const { t } = useLanguage()
+
     useEffect(() => {
         // Create floating particles
         const particlesContainer = document.createElement('div')
@@ -52,7 +55,7 @@ function App() {
                 <Contact />
             </main>
             <footer className="bg-card py-6 text-center text-text-secondary text-sm border-t border-accent-blue/20">
-                <p>&copy; {new Date().getFullYear()} José Caballero G. Todos los derechos reservados.</p>
+                <p>&copy; {new Date().getFullYear()} José Caballero G. {t('footer.rights')}</p>
             </footer>
         </div>
     )

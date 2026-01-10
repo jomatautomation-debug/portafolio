@@ -2,8 +2,11 @@ import { motion } from 'framer-motion'
 import { ArrowRight, Code, FileText } from 'lucide-react'
 import Button from './ui/Button'
 import Section from './ui/Section'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Hero = () => {
+    const { t } = useLanguage()
+
     return (
         <Section id="hero" className="min-h-screen flex items-center pt-16">
             <div className="grid md:grid-cols-2 gap-12 items-center w-full">
@@ -126,7 +129,7 @@ const Hero = () => {
                         className="inline-flex items-center gap-2 bg-card px-4 py-2 rounded-full mb-4 border border-accent-blue/30"
                     >
                         <Code size={20} className="text-accent-blue" />
-                        <span className="text-text-secondary text-sm">Disponible para trabajar</span>
+                        <span className="text-text-secondary text-sm">{t('hero.availableToWork')}</span>
                     </motion.div>
 
                     <motion.h1
@@ -136,7 +139,7 @@ const Hero = () => {
                         className="text-4xl md:text-6xl font-bold mb-4"
                     >
                         <span className="shimmer-text">
-                            José Caballero G.
+                            {t('hero.name')}
                         </span>
                     </motion.h1>
 
@@ -147,7 +150,7 @@ const Hero = () => {
                         className="text-xl md:text-2xl text-text-secondary mb-6 relative"
                     >
                         <span className="inline-block">
-                            Desarrollador de Software Junior – Automatización de Procesos
+                            {t('hero.title')}
                         </span>
                     </motion.h2>
 
@@ -157,8 +160,7 @@ const Hero = () => {
                         transition={{ duration: 0.6, delay: 0.6 }}
                         className="text-text-secondary text-lg mb-8 max-w-2xl"
                     >
-                        Full Stack Developer especializado en automatización con n8n y Make.
-                        Integro APIs, webhooks y bases de datos para optimizar procesos empresariales.
+                        {t('hero.description')}
                     </motion.p>
 
                     <motion.div
@@ -168,7 +170,7 @@ const Hero = () => {
                         className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
                     >
                         <Button href="#projects" variant="primary">
-                            Ver Proyectos <ArrowRight size={20} />
+                            {t('hero.viewProjects')} <ArrowRight size={20} />
                         </Button>
                         <Button
                             href="https://www.canva.com/design/DAG93ehcQk0/DHgvVpOtgqHhge46uY4wfQ/view?utm_content=DAG93ehcQk0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hfec087fb1e"
@@ -176,10 +178,10 @@ const Hero = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <FileText size={20} /> Ver Hoja de Vida
+                            <FileText size={20} /> {t('hero.viewResume')}
                         </Button>
                         <Button href="#contact" variant="cta">
-                            Contactarme
+                            {t('hero.contactMe')}
                         </Button>
                     </motion.div>
                 </motion.div>

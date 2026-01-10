@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion'
 import { Heart, Code2, Lightbulb, Zap, Users } from 'lucide-react'
 import Section from './ui/Section'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const About = () => {
+    const { t } = useLanguage()
+
     return (
         <Section id="about" className="bg-card/30">
             <motion.div
@@ -14,13 +17,12 @@ const About = () => {
             >
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
                     <span className="bg-gradient-to-r from-accent-blue to-accent-green bg-clip-text text-transparent">
-                        Sobre Mí
+                        {t('about.title')}
                     </span>
                 </h2>
 
                 <p className="text-text-secondary text-lg leading-relaxed mb-4">
-                    Apasionado por la tecnología y la automatización. Me encanta resolver problemas complejos
-                    con soluciones simples y eficientes.
+                    {t('about.description')}
                 </p>
 
                 {/* Availability Badge */}
@@ -34,7 +36,7 @@ const About = () => {
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-green opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-3 w-3 bg-accent-green"></span>
                     </span>
-                    <span className="text-gray-800 dark:text-white font-semibold">Disponible para trabajar - Dispuesto a nuevos retos</span>
+                    <span className="text-gray-800 dark:text-white font-semibold">{t('about.availability')}</span>
                 </motion.div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mt-8">
@@ -50,9 +52,9 @@ const About = () => {
                         <motion.div whileHover={{ rotate: [0, -10, 10, 0], scale: 1.2 }} transition={{ duration: 0.3 }}>
                             <Zap className="text-accent-blue mx-auto mb-4 relative z-10" size={36} />
                         </motion.div>
-                        <h3 className="text-lg font-semibold mb-2 relative z-10">Proactivo</h3>
+                        <h3 className="text-lg font-semibold mb-2 relative z-10">{t('about.qualities.proactive.title')}</h3>
                         <p className="text-text-secondary text-sm relative z-10">
-                            Tomo la iniciativa para resolver problemas antes de que se conviertan en obstáculos
+                            {t('about.qualities.proactive.description')}
                         </p>
                     </motion.div>
 
@@ -68,9 +70,9 @@ const About = () => {
                         <motion.div whileHover={{ rotate: [0, -10, 10, 0], scale: 1.2 }} transition={{ duration: 0.3 }}>
                             <Users className="text-accent-green mx-auto mb-4 relative z-10" size={36} />
                         </motion.div>
-                        <h3 className="text-lg font-semibold mb-2 relative z-10">Colaborativo</h3>
+                        <h3 className="text-lg font-semibold mb-2 relative z-10">{t('about.qualities.collaborative.title')}</h3>
                         <p className="text-text-secondary text-sm relative z-10">
-                            Me adapto fácilmente a equipos y disfruto compartir conocimientos
+                            {t('about.qualities.collaborative.description')}
                         </p>
                     </motion.div>
 
@@ -86,9 +88,9 @@ const About = () => {
                         <motion.div whileHover={{ rotate: [0, -10, 10, 0], scale: 1.2 }} transition={{ duration: 0.3 }}>
                             <Heart className="text-accent-blue mx-auto mb-4 relative z-10" size={36} />
                         </motion.div>
-                        <h3 className="text-lg font-semibold mb-2 relative z-10">Pasión</h3>
+                        <h3 className="text-lg font-semibold mb-2 relative z-10">{t('about.qualities.passion.title')}</h3>
                         <p className="text-text-secondary text-sm relative z-10">
-                            Dedicado a crear soluciones que impacten positivamente
+                            {t('about.qualities.passion.description')}
                         </p>
                     </motion.div>
 
@@ -104,9 +106,9 @@ const About = () => {
                         <motion.div whileHover={{ rotate: [0, -10, 10, 0], scale: 1.2 }} transition={{ duration: 0.3 }}>
                             <Code2 className="text-accent-green mx-auto mb-4 relative z-10" size={36} />
                         </motion.div>
-                        <h3 className="text-lg font-semibold mb-2 relative z-10">Código Limpio</h3>
+                        <h3 className="text-lg font-semibold mb-2 relative z-10">{t('about.qualities.cleanCode.title')}</h3>
                         <p className="text-text-secondary text-sm relative z-10">
-                            Escribo código mantenible y escalable siguiendo mejores prácticas
+                            {t('about.qualities.cleanCode.description')}
                         </p>
                     </motion.div>
 
@@ -122,9 +124,9 @@ const About = () => {
                         <motion.div whileHover={{ rotate: [0, -10, 10, 0], scale: 1.2 }} transition={{ duration: 0.3 }}>
                             <Lightbulb className="text-accent-orange mx-auto mb-4 relative z-10" size={36} />
                         </motion.div>
-                        <h3 className="text-lg font-semibold mb-2 relative z-10">Innovación</h3>
+                        <h3 className="text-lg font-semibold mb-2 relative z-10">{t('about.qualities.innovation.title')}</h3>
                         <p className="text-text-secondary text-sm relative z-10">
-                            Siempre buscando nuevas tecnologías y formas de mejorar
+                            {t('about.qualities.innovation.description')}
                         </p>
                     </motion.div>
                 </div>
