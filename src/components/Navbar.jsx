@@ -57,7 +57,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <motion.a
                         href="#hero"
-                        className="flex items-center gap-2"
+                        className="flex items-center gap-3"
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
@@ -72,7 +72,7 @@ const Navbar = () => {
                         </span>
                     </motion.a>
                     {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center gap-8">
+                    <div className="hidden md:flex items-center gap-6">
                         {navLinks.map((link, index) => (
                             <motion.a
                                 key={link.name}

@@ -1,7 +1,10 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Calendar, Users, Code, CheckCircle, FileText } from 'lucide-react'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const ProjectModal = ({ project, isOpen, onClose }) => {
+    const { t } = useLanguage()
+
     if (!isOpen || !project) return null
 
     return (
@@ -43,14 +46,14 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                                 <div className="flex items-center gap-3">
                                     <Calendar className="text-accent-blue" size={20} />
                                     <div>
-                                        <p className="text-xs text-text-secondary">Duración</p>
+                                        <p className="text-xs text-text-secondary">{t('projectModal.duration')}</p>
                                         <p className="text-white font-semibold">{project.duration}</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <Users className="text-accent-green" size={20} />
                                     <div>
-                                        <p className="text-xs text-text-secondary">Equipo</p>
+                                        <p className="text-xs text-text-secondary">{t('projectModal.team')}</p>
                                         <p className="text-white font-semibold">{project.team}</p>
                                     </div>
                                 </div>
@@ -59,14 +62,14 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                                 <div className="flex items-center gap-3">
                                     <Code className="text-accent-blue" size={20} />
                                     <div>
-                                        <p className="text-xs text-text-secondary">Rol</p>
+                                        <p className="text-xs text-text-secondary">{t('projectModal.role')}</p>
                                         <p className="text-white font-semibold">{project.role}</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <CheckCircle className="text-accent-green" size={20} />
                                     <div>
-                                        <p className="text-xs text-text-secondary">Estado</p>
+                                        <p className="text-xs text-text-secondary">{t('projectModal.status')}</p>
                                         <p className="text-white font-semibold">{project.status}</p>
                                     </div>
                                 </div>
@@ -78,7 +81,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                             <div>
                                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                                     <Users className="text-accent-blue" size={20} />
-                                    Equipo de Desarrollo
+                                    {t('projectModal.devTeam')}
                                 </h3>
                                 <div className="grid md:grid-cols-2 gap-4">
                                     {project.collaborators.map((collab, idx) => (
@@ -98,11 +101,11 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                         <div>
                             <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                                 <Code className="text-accent-blue" size={20} />
-                                Detalles Técnicos
+                                {t('projectModal.techDetails')}
                             </h3>
                             <div className="bg-background/50 p-6 rounded-lg border border-gray-800 space-y-4">
                                 <div>
-                                    <p className="text-sm font-semibold text-accent-blue mb-2">Stack Tecnológico</p>
+                                    <p className="text-sm font-semibold text-accent-blue mb-2">{t('projectModal.stack')}</p>
                                     <div className="flex flex-wrap gap-2">
                                         {project.stack.map((tech) => (
                                             <span key={tech} className="px-3 py-1 bg-card text-accent-green text-xs rounded-full border border-accent-green/30">
@@ -113,13 +116,13 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                                 </div>
                                 {project.architecture && (
                                     <div>
-                                        <p className="text-sm font-semibold text-accent-blue mb-2">Arquitectura</p>
+                                        <p className="text-sm font-semibold text-accent-blue mb-2">{t('projectModal.architecture')}</p>
                                         <p className="text-sm text-text-secondary">{project.architecture}</p>
                                     </div>
                                 )}
                                 {project.database && (
                                     <div>
-                                        <p className="text-sm font-semibold text-accent-blue mb-2">Base de Datos</p>
+                                        <p className="text-sm font-semibold text-accent-blue mb-2">{t('projectModal.database')}</p>
                                         <p className="text-sm text-text-secondary">{project.database}</p>
                                     </div>
                                 )}
@@ -130,7 +133,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                         <div>
                             <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                                 <FileText className="text-accent-blue" size={20} />
-                                Características Principales
+                                {t('projectModal.features')}
                             </h3>
                             <div className="grid md:grid-cols-2 gap-3">
                                 {project.features.map((feature, idx) => (
@@ -145,7 +148,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                         {/* Challenges & Solutions */}
                         {project.challenges && (
                             <div>
-                                <h3 className="text-xl font-bold text-white mb-4">Desafíos y Soluciones</h3>
+                                <h3 className="text-xl font-bold text-white mb-4">{t('projectModal.challenges')}</h3>
                                 <div className="space-y-4">
                                     {project.challenges.map((challenge, idx) => (
                                         <div key={idx} className="bg-background/50 p-4 rounded-lg border border-gray-800">
@@ -160,7 +163,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                         {/* Results */}
                         {project.results && (
                             <div>
-                                <h3 className="text-xl font-bold text-white mb-4">Resultados</h3>
+                                <h3 className="text-xl font-bold text-white mb-4">{t('projectModal.results')}</h3>
                                 <div className="bg-gradient-to-r from-accent-blue/10 to-accent-green/10 p-6 rounded-lg border border-accent-blue/30">
                                     <ul className="space-y-2">
                                         {project.results.map((result, idx) => (

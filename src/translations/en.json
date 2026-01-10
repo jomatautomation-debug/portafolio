@@ -1,67 +1,647 @@
 {
-    "nav": {
+    "navbar": {
         "home": "Home",
-        "about": "About Me",
+        "about": "About",
         "skills": "Skills",
         "projects": "Projects",
+        "experience": "Experience",
         "certifications": "Certifications",
-        "faq": "FAQ",
-        "contact": "Contact"
+        "contact": "Contact",
+        "lightMode": "Light Mode",
+        "darkMode": "Dark Mode"
     },
     "hero": {
-        "available": "Available for work",
+        "availableToWork": "Available for work",
         "name": "José Caballero G.",
         "title": "Junior Software Developer – Process Automation",
         "description": "Full Stack Developer specialized in automation with n8n and Make. I integrate APIs, webhooks, and databases to optimize business processes.",
         "viewProjects": "View Projects",
-        "viewCV": "View Resume",
-        "contact": "Contact Me"
+        "viewResume": "View Resume",
+        "contactMe": "Contact Me"
     },
     "about": {
         "title": "About Me",
         "subtitle": "Learn more about my journey and passion for technology",
-        "intro": "I'm a developer passionate about creating solutions that truly impact business efficiency.",
-        "traits": {
+        "description": "Passionate about technology and automation. I love solving complex problems with simple and efficient solutions.",
+        "qualities": {
             "proactive": {
                 "title": "Proactive",
-                "description": "I always look for improvement opportunities and take initiative to solve problems before they become obstacles."
+                "description": "I take the initiative to solve problems before they become obstacles"
             },
             "collaborative": {
                 "title": "Collaborative",
-                "description": "I easily adapt to work teams, value open communication, and enjoy sharing knowledge with my colleagues."
+                "description": "I easily adapt to teams and enjoy sharing knowledge"
             },
-            "learner": {
-                "title": "Continuous Learning",
-                "description": "Technology constantly evolves and so do I. I'm always learning new tools and best practices."
+            "passion": {
+                "title": "Passion",
+                "description": "Dedicated to creating solutions that positively impact"
+            },
+            "cleanCode": {
+                "title": "Clean Code",
+                "description": "I write maintainable and scalable code following best practices"
+            },
+            "innovation": {
+                "title": "Innovation",
+                "description": "Always looking for new technologies and ways to improve"
             }
         },
         "availability": "🟢 Available for work - Ready for new challenges"
     },
     "skills": {
         "title": "Technical Skills",
-        "subtitle": "Technologies and tools I master",
+        "subtitle": "Select a category to see my tools",
         "categories": {
             "backend": "Backend",
             "frontend": "Frontend",
             "automation": "Automation",
             "tools": "Tools"
-        }
+        },
+        "list": [
+            {
+                "name": "Node.js",
+                "color": "accent-green",
+                "category": "backend",
+                "description": "JavaScript runtime environment for server-side"
+            },
+            {
+                "name": "MySQL",
+                "color": "accent-blue",
+                "category": "backend",
+                "description": "Robust relational database management"
+            },
+            {
+                "name": "PostgreSQL",
+                "color": "accent-blue",
+                "category": "backend",
+                "description": "Advanced and powerful relational database"
+            },
+            {
+                "name": "MongoDB",
+                "color": "accent-green",
+                "category": "backend",
+                "description": "NoSQL database for flexible data"
+            },
+            {
+                "name": "REST APIs",
+                "color": "accent-orange",
+                "category": "backend",
+                "description": "Standard and scalable web service design"
+            },
+            {
+                "name": "React",
+                "color": "accent-blue",
+                "category": "frontend",
+                "description": "Leading library for user interfaces"
+            },
+            {
+                "name": "Vite",
+                "color": "accent-orange",
+                "category": "frontend",
+                "description": "Ultra-fast frontend build tool"
+            },
+            {
+                "name": "JavaScript",
+                "color": "accent-orange",
+                "category": "frontend",
+                "description": "Fundamental language for interactive web"
+            },
+            {
+                "name": "Tailwind CSS",
+                "color": "accent-blue",
+                "category": "frontend",
+                "description": "Utility framework for rapid design"
+            },
+            {
+                "name": "HTML & CSS",
+                "color": "accent-orange",
+                "category": "frontend",
+                "description": "Fundamental web structure and styling"
+            },
+            {
+                "name": "n8n",
+                "color": "accent-green",
+                "category": "automation",
+                "description": "Customizable workflow automation"
+            },
+            {
+                "name": "Make",
+                "color": "accent-blue",
+                "category": "automation",
+                "description": "Visual app integration platform"
+            },
+            {
+                "name": "Zapier",
+                "color": "accent-orange",
+                "category": "automation",
+                "description": "Leading web app connector"
+            },
+            {
+                "name": "Webhooks",
+                "color": "accent-green",
+                "category": "automation",
+                "description": "Real-time system communication"
+            },
+            {
+                "name": "VS Code",
+                "color": "accent-blue",
+                "category": "tools",
+                "description": "The most powerful and versatile code editor"
+            },
+            {
+                "name": "Git",
+                "color": "accent-orange",
+                "category": "tools",
+                "description": "Essential version control system"
+            },
+            {
+                "name": "GitHub",
+                "color": "accent-primary",
+                "category": "tools",
+                "description": "Code collaboration and hosting"
+            },
+            {
+                "name": "Postman",
+                "color": "accent-orange",
+                "category": "tools",
+                "description": "API testing and development"
+            },
+            {
+                "name": "Docker",
+                "color": "accent-blue",
+                "category": "tools",
+                "description": "Containers for consistent deployment"
+            },
+            {
+                "name": "NPM",
+                "color": "accent-green",
+                "category": "tools",
+                "description": "JavaScript package manager"
+            }
+        ]
     },
     "projects": {
         "title": "Projects",
-        "subtitle": "Some of the projects I've worked on",
+        "subtitle": "Some of the projects I've worked on, demonstrating my skills in development and automation",
         "viewMore": "View More Projects",
         "viewLess": "View Less",
-        "viewDocs": "View Documentation"
+        "viewDocs": "View Documentation",
+        "labels": {
+            "stack": "Stack:",
+            "achievements": "Achievements:",
+            "duration": "Duration:",
+            "team": "Team:",
+            "role": "Role:",
+            "status": "Status:",
+            "collaborators": "Collaborators:",
+            "architecture": "Architecture:",
+            "database": "Database:",
+            "features": "Features:",
+            "challenges": "Challenges & Solutions:",
+            "results": "Results:",
+            "challenge": "Challenge:",
+            "solution": "Solution:"
+        },
+        "list": [
+            {
+                "title": "HR Automation System",
+                "description": "Comprehensive automation platform for HR department with payroll management, attendance control, and performance evaluations",
+                "stack": [
+                    "React",
+                    "Node.js",
+                    "PostgreSQL",
+                    "Redis",
+                    "Docker"
+                ],
+                "achievements": [
+                    "Payroll automation",
+                    "Biometric control",
+                    "Real-time reports",
+                    "70% reduction in administrative time"
+                ],
+                "duration": "6 months",
+                "team": "2 developers",
+                "role": "Full Stack Developer & Team Lead",
+                "status": "Completed - In production",
+                "collaborators": [
+                    {
+                        "name": "José Caballero G.",
+                        "role": "Full Stack Developer & Team Lead",
+                        "responsibilities": "System architecture, backend development, API integration, project management"
+                    },
+                    {
+                        "name": "Camilo Zapata",
+                        "role": "Frontend Developer",
+                        "responsibilities": "Interface development, UX/UI design, interactive dashboard implementation"
+                    }
+                ],
+                "architecture": "Microservices architecture with RESTful API, JWT authentication, and Redis caching system for query optimization",
+                "database": "PostgreSQL with master-slave replication for high availability",
+                "features": [
+                    "Automated payroll management with tax calculation",
+                    "Attendance control with biometric integration",
+                    "360° performance evaluation system",
+                    "Automatic contract and document generation",
+                    "Executive dashboard with real-time metrics",
+                    "Recruitment and selection module",
+                    "Vacation and leave management",
+                    "Customizable and exportable reports",
+                    "Email and SMS notification system",
+                    "Employee self-service portal"
+                ],
+                "challenges": [
+                    {
+                        "challenge": "Integration with legacy biometric system",
+                        "solution": "Development of custom middleware to translate proprietary protocols to modern REST API"
+                    },
+                    {
+                        "challenge": "Complex payroll calculations with multiple variables",
+                        "solution": "Implementation of configurable rules engine with multi-layer validation"
+                    },
+                    {
+                        "challenge": "Performance with large data volumes",
+                        "solution": "Implementation of Redis caching system and query optimization with composite indexes"
+                    }
+                ],
+                "results": [
+                    "70% reduction in payroll processing time",
+                    "95% elimination of manual calculation errors",
+                    "40 hours/month saved in administrative tasks",
+                    "85% improvement in employee satisfaction",
+                    "Positive ROI in 8 months of implementation"
+                ]
+            },
+            {
+                "title": "Barbershop Automation System",
+                "description": "Complete management and automation system for barbershop with online bookings, automatic reminders, and client management",
+                "stack": [
+                    "React",
+                    "Node.js",
+                    "MongoDB",
+                    "WhatsApp API"
+                ],
+                "achievements": [
+                    "24/7 automatic bookings",
+                    "WhatsApp reminders",
+                    "Inventory management",
+                    "Metrics dashboard"
+                ],
+                "duration": "3 months",
+                "team": "1 developer",
+                "role": "Full Stack Developer",
+                "status": "Completed",
+                "collaborators": [
+                    {
+                        "name": "José Caballero G.",
+                        "role": "Full Stack Developer",
+                        "responsibilities": "Complete system development, WhatsApp Business API integration"
+                    }
+                ],
+                "architecture": "Monolithic application with clear layer separation (presentation, business logic, data)",
+                "database": "MongoDB with optimized schemas for frequent availability queries",
+                "features": [
+                    "Online booking system with interactive calendar",
+                    "Automatic WhatsApp reminder sending",
+                    "Client management with service history",
+                    "Product inventory control",
+                    "Dashboard with business metrics",
+                    "Client loyalty system",
+                    "Sales and service reports",
+                    "Multiple barber management"
+                ],
+                "challenges": [
+                    {
+                        "challenge": "Real-time availability synchronization",
+                        "solution": "WebSocket implementation for instant calendar updates"
+                    },
+                    {
+                        "challenge": "WhatsApp Business API integration",
+                        "solution": "Development of messaging service with priority queue and automatic retries"
+                    }
+                ],
+                "results": [
+                    "45% increase in monthly bookings",
+                    "80% reduction in no-shows thanks to reminders",
+                    "60% improvement in inventory management",
+                    "15 hours/week saved in administrative management"
+                ]
+            },
+            {
+                "title": "Premium Optical Website",
+                "description": "Modern website for optical shop with product catalog, virtual glasses try-on, and online appointment system",
+                "stack": [
+                    "React",
+                    "Tailwind CSS",
+                    "Firebase",
+                    "AR.js"
+                ],
+                "achievements": [
+                    "Interactive catalog",
+                    "Virtual glasses try-on",
+                    "Appointment system",
+                    "Responsive design"
+                ],
+                "duration": "2 months",
+                "team": "1 developer",
+                "role": "Frontend Developer",
+                "status": "Completed",
+                "collaborators": [
+                    {
+                        "name": "José Caballero G.",
+                        "role": "Frontend Developer",
+                        "responsibilities": "Frontend development, augmented reality implementation, responsive design"
+                    }
+                ],
+                "architecture": "Single Page Application (SPA) with Firebase as backend-as-a-service",
+                "database": "Firebase Firestore for real-time storage",
+                "features": [
+                    "Product catalog with advanced filters",
+                    "Virtual glasses try-on using webcam",
+                    "Online appointment system with Google Calendar",
+                    "Shopping cart with quotation",
+                    "Visual health blog",
+                    "Satisfied customer gallery",
+                    "Integrated contact form",
+                    "SEO optimization"
+                ],
+                "challenges": [
+                    {
+                        "challenge": "Accurate virtual try-on implementation",
+                        "solution": "Use of AR.js with facial detection and automatic scale adjustment"
+                    }
+                ],
+                "results": [
+                    "120% increase in online inquiries",
+                    "50% reduction in in-person service time",
+                    "90% improvement in user experience"
+                ]
+            },
+            {
+                "title": "Shoe Store E-commerce",
+                "description": "Complete online store for shoe shop with shopping cart, payment gateway, and real-time inventory management",
+                "stack": [
+                    "Next.js",
+                    "Stripe",
+                    "PostgreSQL",
+                    "Tailwind CSS"
+                ],
+                "achievements": [
+                    "Shopping cart",
+                    "Secure payments",
+                    "Stock management",
+                    "Admin panel"
+                ],
+                "duration": "4 months",
+                "team": "1 developer",
+                "role": "Full Stack Developer",
+                "status": "Completed - In production",
+                "collaborators": [
+                    {
+                        "name": "José Caballero G.",
+                        "role": "Full Stack Developer",
+                        "responsibilities": "Complete development, payment integration, performance optimization"
+                    }
+                ],
+                "architecture": "Next.js with Server-Side Rendering (SSR) for better SEO and performance",
+                "database": "PostgreSQL with optimized indexes for product searches",
+                "features": [
+                    "Product catalog with advanced search",
+                    "Persistent shopping cart",
+                    "Stripe integration for secure payments",
+                    "Shipping system with tracking",
+                    "Complete admin panel",
+                    "Real-time inventory management",
+                    "Discount and coupon system",
+                    "Product reviews and ratings",
+                    "Wishlist and product comparison",
+                    "Stock notifications"
+                ],
+                "challenges": [
+                    {
+                        "challenge": "Real-time inventory synchronization",
+                        "solution": "Implementation of event system with optimistic update and reconciliation"
+                    },
+                    {
+                        "challenge": "Product image optimization",
+                        "solution": "Use of Next.js Image Optimization with lazy loading and modern formats (WebP)"
+                    }
+                ],
+                "results": [
+                    "Online sales increased 200% in 3 months",
+                    "Load time reduced to less than 2 seconds",
+                    "3.5% conversion rate",
+                    "60% reduction in stock inquiries"
+                ]
+            },
+            {
+                "title": "Restaurant Landing Page",
+                "description": "Attractive website for restaurant with digital menu, online reservations, and social media integration",
+                "stack": [
+                    "React",
+                    "Tailwind CSS",
+                    "Google Maps API",
+                    "EmailJS"
+                ],
+                "achievements": [
+                    "Interactive digital menu",
+                    "Reservation system",
+                    "Photo gallery",
+                    "Contact form"
+                ],
+                "duration": "1 month",
+                "team": "1 developer",
+                "role": "Frontend Developer",
+                "status": "Completed",
+                "collaborators": [
+                    {
+                        "name": "José Caballero G.",
+                        "role": "Frontend Developer",
+                        "responsibilities": "Frontend design and development, image optimization, API integration"
+                    }
+                ],
+                "architecture": "Static Site Generation with asset optimization",
+                "database": "No database required - static content",
+                "features": [
+                    "Digital menu with categories and filters",
+                    "Professional photo gallery",
+                    "Integrated reservation system",
+                    "Interactive map with location",
+                    "Social media integration",
+                    "Functional contact form",
+                    "Modern responsive design",
+                    "Local SEO optimization"
+                ],
+                "challenges": [],
+                "results": [
+                    "80% increase in online reservations",
+                    "95% improvement in digital presence",
+                    "40% reduction in phone calls"
+                ]
+            },
+            {
+                "title": "Gym Management System",
+                "description": "Complete platform for gym management with membership control, classes, and personalized routines",
+                "stack": [
+                    "React",
+                    "Node.js",
+                    "MySQL",
+                    "Chart.js"
+                ],
+                "achievements": [
+                    "Membership control",
+                    "Class calendar",
+                    "Personalized routines",
+                    "Progress reports"
+                ],
+                "duration": "5 months",
+                "team": "1 developer",
+                "role": "Full Stack Developer",
+                "status": "Completed - In production",
+                "collaborators": [
+                    {
+                        "name": "José Caballero G.",
+                        "role": "Full Stack Developer",
+                        "responsibilities": "System architecture, full stack development, metrics implementation"
+                    }
+                ],
+                "architecture": "RESTful API with role-based authentication",
+                "database": "MySQL with 3NF normalization for data integrity",
+                "features": [
+                    "Membership and payment management",
+                    "Access control with RFID cards",
+                    "Group class calendar",
+                    "Trainer-personalized routines",
+                    "Progress tracking with charts",
+                    "Class reservation system",
+                    "Trainer dashboard",
+                    "Member mobile app",
+                    "Financial reports",
+                    "Notification system"
+                ],
+                "challenges": [
+                    {
+                        "challenge": "Real-time class capacity management",
+                        "solution": "Reservation system with optimistic locking and automatic waiting list"
+                    },
+                    {
+                        "challenge": "Accurate physical progress tracking",
+                        "solution": "Implementation of data analysis algorithms with interactive visualization"
+                    }
+                ],
+                "results": [
+                    "85% reduction in check-in time",
+                    "40% increase in class attendance",
+                    "75% improvement in member retention",
+                    "25 hours/week saved in administration"
+                ]
+            },
+            {
+                "title": "Real Estate Web Portal",
+                "description": "Professional website for real estate with advanced property search, virtual tours, and contact system",
+                "stack": [
+                    "React",
+                    "Google Maps API",
+                    "Firebase",
+                    "Tailwind CSS"
+                ],
+                "achievements": [
+                    "Advanced search",
+                    "360° virtual tours",
+                    "Smart filters",
+                    "Favorites system"
+                ],
+                "duration": "3 months",
+                "team": "1 developer",
+                "role": "Full Stack Developer",
+                "status": "Completed",
+                "collaborators": [
+                    {
+                        "name": "José Caballero G.",
+                        "role": "Full Stack Developer",
+                        "responsibilities": "Complete development, map integration, virtual tour implementation"
+                    }
+                ],
+                "architecture": "Progressive Web App (PWA) with offline capabilities",
+                "database": "Firebase Firestore with composite indexes for complex searches",
+                "features": [
+                    "Advanced search with multiple filters",
+                    "360° virtual property tours",
+                    "Interactive map with properties",
+                    "Favorites and comparison system",
+                    "Mortgage calculator",
+                    "Contact form per property",
+                    "Admin panel for agents",
+                    "New property notifications",
+                    "Social media integration",
+                    "SEO optimization per property"
+                ],
+                "challenges": [
+                    {
+                        "challenge": "Fast loading of 360° virtual tours",
+                        "solution": "Implementation of progressive lazy loading with intelligent preloading"
+                    },
+                    {
+                        "challenge": "Efficient search with multiple criteria",
+                        "solution": "Use of composite indexes in Firestore and frequent result caching"
+                    }
+                ],
+                "results": [
+                    "150% increase in property inquiries",
+                    "60% reduction in unnecessary in-person visits",
+                    "90% improvement in search experience",
+                    "70% increase in sales closing"
+                ]
+            }
+        ]
+    },
+    "experience": {
+        "title": "Experience",
+        "subtitle": "My professional journey in software development and process automation",
+        "list": [
+            {
+                "company": "SENA – SENNOVA",
+                "position": "Software Developer – Automation",
+                "period": "June 2025 – December 2025",
+                "responsibilities": [
+                    "Web application development for SENA technology projects",
+                    "Design and implementation of automated processes through n8n and Make workflows",
+                    "Platform integration through APIs, Webhooks, and automation tools",
+                    "Data and API management to optimize administrative and operational tasks",
+                    "Technical support and continuous improvement of automated workflows"
+                ]
+            },
+            {
+                "company": "Independent Projects (Freelance)",
+                "position": "Full Stack Developer & Automation",
+                "period": "2025 – Present",
+                "responsibilities": [
+                    "Web interface and internal system development with React",
+                    "Implementation of automated workflows for data sending, notifications, and process control",
+                    "Platform integration through APIs, Webhooks, and automation tools"
+                ]
+            }
+        ]
     },
     "certifications": {
         "title": "Certifications",
-        "subtitle": "Completed courses and certifications",
-        "viewCert": "View Certificate"
-    },
-    "faq": {
-        "title": "Frequently Asked Questions",
-        "subtitle": "Answers to common technical interview questions"
+        "subtitle": "Continuous training in cloud technologies and software development",
+        "list": [
+            {
+                "title": "AWS Cloud Practitioner Essentials",
+                "issuer": "AWS Skill Builder"
+            },
+            {
+                "title": "AWS Technical Essentials",
+                "issuer": "AWS Skill Builder"
+            },
+            {
+                "title": "AWS Database Offerings",
+                "issuer": "AWS Skill Builder"
+            },
+            {
+                "title": "Technical and Conversational English",
+                "issuer": "SENA"
+            }
+        ]
     },
     "contact": {
         "title": "Contact",
@@ -77,8 +657,55 @@
             "message": "Message",
             "send": "Send Message",
             "sending": "Sending...",
-            "success": "Message sent successfully! I'll reply soon.",
+            "success": "Message sent successfully! I'll respond soon.",
             "error": "There was an error sending the message. Please try again."
         }
+    },
+    "faq": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "Answers to common technical interview questions",
+        "questions": [
+            {
+                "question": "What is a REST API and how have you used it?",
+                "answer": "A REST API is an interface that enables communication between systems using HTTP. I've worked with REST APIs in several projects, consuming endpoints to fetch user data, create records, and update information. For example, in the DataExplorer project I integrated the JSONPlaceholder API to display users and posts in real-time."
+            },
+            {
+                "question": "How do you handle errors in JavaScript?",
+                "answer": "I use try-catch for synchronous errors and .catch() for promises. I always validate input data, handle edge cases, and show clear messages to users. In my projects I implement error handling in both frontend and backend, logging errors for debugging and displaying user-friendly messages."
+            },
+            {
+                "question": "What experience do you have with databases?",
+                "answer": "I've worked with PostgreSQL and MongoDB. In PostgreSQL I design normalized schemas, create indexes to optimize queries, and handle relationships between tables. With MongoDB I work with JSON documents, implement aggregations, and optimize queries. I also have experience with ORMs like Prisma to facilitate database operations."
+            },
+            {
+                "question": "What is Git and how do you use it in your workflow?",
+                "answer": "Git is a version control system I use daily. I create branches for new features, make descriptive commits, use pull requests for code review, and resolve conflicts when necessary. I follow best practices like atomic commits and clear messages. I also use GitHub for collaboration and continuous deployment."
+            },
+            {
+                "question": "How do you optimize web application performance?",
+                "answer": "I optimize through lazy loading components, minimize unnecessary re-renders with React.memo, use debouncing in searches, implement caching with localStorage or Redis, optimize images with modern formats like WebP, and use code splitting. I also monitor performance metrics with tools like Lighthouse."
+            },
+            {
+                "question": "What automation tools do you know?",
+                "answer": "I have experience with n8n and Make (Integromat) for automating business processes. I've created flows that connect APIs, process webhooks, send automatic notifications, and synchronize data between systems. I've also worked with Zapier for simpler integrations and custom scripts with Node.js for specific automations."
+            }
+        ]
+    },
+    "projectModal": {
+        "duration": "Duration",
+        "team": "Team",
+        "role": "Role",
+        "status": "Status",
+        "devTeam": "Development Team",
+        "techDetails": "Technical Details",
+        "stack": "Tech Stack",
+        "architecture": "Architecture",
+        "database": "Database",
+        "features": "Key Features",
+        "challenges": "Challenges & Solutions",
+        "results": "Results"
+    },
+    "footer": {
+        "rights": "All rights reserved."
     }
 }

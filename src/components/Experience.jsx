@@ -1,32 +1,11 @@
 import { motion } from 'framer-motion'
 import { Briefcase, Calendar } from 'lucide-react'
 import Section from './ui/Section'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Experience = () => {
-    const experiences = [
-        {
-            company: 'SENA – SENNOVA',
-            position: 'Desarrollador de Software – Automatización',
-            period: 'Junio 2025 – Diciembre 2025',
-            responsibilities: [
-                'Desarrollo de aplicaciones web para proyectos tecnológicos del SENA',
-                'Diseño e implementación de procesos automatizados mediante flujos en n8n y Make',
-                'Integración de plataformas mediante APIs, Webhooks y herramientas de automatización',
-                'Gestión de datos y APIs para optimizar tareas administrativas y operativas',
-                'Soporte técnico y mejora continua de flujos automatizados',
-            ],
-        },
-        {
-            company: 'Proyectos Independientes (Freelance)',
-            position: 'Full Stack Developer & Automatización',
-            period: '2025 – Presente',
-            responsibilities: [
-                'Desarrollo de interfaces web y sistemas internos con React',
-                'Implementación de flujos automatizados para envío de datos, notificaciones y control de procesos',
-                'Integración de plataformas mediante APIs, Webhooks y herramientas de automatización',
-            ],
-        },
-    ]
+    const { t } = useLanguage()
+    const experiences = t('experience.list')
 
     return (
         <Section id="experience">
@@ -39,11 +18,11 @@ const Experience = () => {
             >
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
                     <span className="bg-gradient-to-r from-accent-blue to-accent-green bg-clip-text text-transparent">
-                        Experiencia
+                        {t('experience.title')}
                     </span>
                 </h2>
                 <p className="text-text-secondary max-w-2xl mx-auto">
-                    Mi trayectoria profesional en desarrollo de software y automatización de procesos
+                    {t('experience.subtitle')}
                 </p>
             </motion.div>
 

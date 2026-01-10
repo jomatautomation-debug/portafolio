@@ -2,34 +2,24 @@ import { motion } from 'framer-motion'
 import { Award, Cloud, Database, Languages } from 'lucide-react'
 import Card from './ui/Card'
 import Section from './ui/Section'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Certifications = () => {
-    const certifications = [
-        {
-            title: 'AWS Cloud Practitioner Essentials',
-            issuer: 'AWS Skill Builder',
-            icon: Cloud,
-            color: 'accent-orange',
-        },
-        {
-            title: 'AWS Technical Essentials',
-            issuer: 'AWS Skill Builder',
-            icon: Cloud,
-            color: 'accent-blue',
-        },
-        {
-            title: 'AWS Database Offerings',
-            issuer: 'AWS Skill Builder',
-            icon: Database,
-            color: 'accent-green',
-        },
-        {
-            title: 'Inglés Técnico y Conversacional',
-            issuer: 'SENA',
-            icon: Languages,
-            color: 'accent-blue',
-        },
+    const { t } = useLanguage()
+
+    // Config for icons and colors which are not in translation files
+    const certConfig = [
+        { icon: Cloud, color: 'accent-orange' },
+        { icon: Cloud, color: 'accent-blue' },
+        { icon: Database, color: 'accent-green' },
+        { icon: Languages, color: 'accent-blue' },
     ]
+
+    const certificationsList = t('certifications.list')
+    const certifications = certificationsList.map((cert, index) => ({
+        ...cert,
+        ...(certConfig[index] || { icon: Award, color: 'accent-blue' }) // Fallback
+    }))
 
     return (
         <Section id="certifications" className="bg-card/30">
@@ -42,11 +32,11 @@ const Certifications = () => {
             >
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
                     <span className="bg-gradient-to-r from-accent-blue to-accent-green bg-clip-text text-transparent">
-                        Certificaciones
+                        {t('certifications.title')}
                     </span>
                 </h2>
                 <p className="text-text-secondary max-w-2xl mx-auto">
-                    Formación continua en tecnologías cloud y desarrollo de software
+                    {t('certifications.subtitle')}
                 </p>
             </motion.div>
 

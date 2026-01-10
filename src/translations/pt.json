@@ -1,0 +1,711 @@
+{
+    "navbar": {
+        "home": "Início",
+        "about": "Sobre Mim",
+        "skills": "Habilidades",
+        "projects": "Projetos",
+        "experience": "Experiência",
+        "certifications": "Certificações",
+        "contact": "Contato",
+        "lightMode": "Modo Claro",
+        "darkMode": "Modo Escuro"
+    },
+    "hero": {
+        "availableToWork": "Disponível para trabalhar",
+        "name": "José Caballero G.",
+        "title": "Desenvolvedor de Software Júnior – Automação de Processos",
+        "description": "Desenvolvedor Full Stack especializado em automação com n8n e Make. Integro APIs, webhooks e bancos de dados para otimizar processos empresariais.",
+        "viewProjects": "Ver Projetos",
+        "viewResume": "Ver Currículo",
+        "contactMe": "Entre em Contato"
+    },
+    "about": {
+        "title": "Sobre Mim",
+        "subtitle": "Conheça mais sobre minha trajetória e paixão pela tecnologia",
+        "description": "Apaixonado por tecnologia e automação. Adoro resolver problemas complexos com soluções simples e eficientes.",
+        "qualities": {
+            "proactive": {
+                "title": "Proativo",
+                "description": "Tomo a iniciativa para resolver problemas antes que se tornem obstáculos"
+            },
+            "collaborative": {
+                "title": "Colaborativo",
+                "description": "Me adapto facilmente a equipes e gosto de compartilhar conhecimentos"
+            },
+            "passion": {
+                "title": "Paixão",
+                "description": "Dedicado a criar soluções que impactem positivamente"
+            },
+            "cleanCode": {
+                "title": "Código Limpo",
+                "description": "Escrevo código mantível e escalável seguindo as melhores práticas"
+            },
+            "innovation": {
+                "title": "Inovação",
+                "description": "Sempre buscando novas tecnologias e formas de melhorar"
+            }
+        },
+        "availability": "🟢 Disponível para trabalhar - Pronto para novos desafios"
+    },
+    "skills": {
+        "title": "Habilidades Técnicas",
+        "subtitle": "Selecione uma categoria para ver minhas ferramentas",
+        "categories": {
+            "backend": "Backend",
+            "frontend": "Frontend",
+            "automation": "Automação",
+            "tools": "Ferramentas"
+        },
+        "list": [
+            {
+                "name": "Node.js",
+                "color": "accent-green",
+                "category": "backend",
+                "description": "Ambiente de execução JavaScript no servidor"
+            },
+            {
+                "name": "MySQL",
+                "color": "accent-blue",
+                "category": "backend",
+                "description": "Gestão de bancos de dados relacionais robustos"
+            },
+            {
+                "name": "PostgreSQL",
+                "color": "accent-blue",
+                "category": "backend",
+                "description": "Banco de dados relacional avançado e poderoso"
+            },
+            {
+                "name": "MongoDB",
+                "color": "accent-green",
+                "category": "backend",
+                "description": "Banco de dados NoSQL para dados flexíveis"
+            },
+            {
+                "name": "REST APIs",
+                "color": "accent-orange",
+                "category": "backend",
+                "description": "Design de serviços web padrão e escaláveis"
+            },
+            {
+                "name": "React",
+                "color": "accent-blue",
+                "category": "frontend",
+                "description": "Biblioteca líder para interfaces de usuário"
+            },
+            {
+                "name": "Vite",
+                "color": "accent-orange",
+                "category": "frontend",
+                "description": "Ferramenta de construção frontend ultra-rápida"
+            },
+            {
+                "name": "JavaScript",
+                "color": "accent-orange",
+                "category": "frontend",
+                "description": "Linguagem fundamental para web interativa"
+            },
+            {
+                "name": "Tailwind CSS",
+                "color": "accent-blue",
+                "category": "frontend",
+                "description": "Framework de utilidades para design rápido"
+            },
+            {
+                "name": "HTML & CSS",
+                "color": "accent-orange",
+                "category": "frontend",
+                "description": "Estrutura e estilo fundamentais da web"
+            },
+            {
+                "name": "n8n",
+                "color": "accent-green",
+                "category": "automation",
+                "description": "Automação de fluxos de trabalho personalizáveis"
+            },
+            {
+                "name": "Make",
+                "color": "accent-blue",
+                "category": "automation",
+                "description": "Plataforma visual de integração de apps"
+            },
+            {
+                "name": "Zapier",
+                "color": "accent-orange",
+                "category": "automation",
+                "description": "Conector de aplicações web líder"
+            },
+            {
+                "name": "Webhooks",
+                "color": "accent-green",
+                "category": "automation",
+                "description": "Comunicação em tempo real entre sistemas"
+            },
+            {
+                "name": "VS Code",
+                "color": "accent-blue",
+                "category": "tools",
+                "description": "O editor de código mais poderoso e versátil"
+            },
+            {
+                "name": "Git",
+                "color": "accent-orange",
+                "category": "tools",
+                "description": "Sistema de controle de versão essencial"
+            },
+            {
+                "name": "GitHub",
+                "color": "accent-primary",
+                "category": "tools",
+                "description": "Colaboração e hospedagem de código"
+            },
+            {
+                "name": "Postman",
+                "color": "accent-orange",
+                "category": "tools",
+                "description": "Testes e desenvolvimento de APIs"
+            },
+            {
+                "name": "Docker",
+                "color": "accent-blue",
+                "category": "tools",
+                "description": "Contêineres para implantação consistente"
+            },
+            {
+                "name": "NPM",
+                "color": "accent-green",
+                "category": "tools",
+                "description": "Gerenciador de pacotes JavaScript"
+            }
+        ]
+    },
+    "projects": {
+        "title": "Projetos",
+        "subtitle": "Alguns dos projetos em que trabalhei, demonstrando minhas habilidades em desenvolvimento e automação",
+        "viewMore": "Ver Mais Projetos",
+        "viewLess": "Ver Menos",
+        "viewDocs": "Ver Documentação",
+        "labels": {
+            "stack": "Stack:",
+            "achievements": "Conquistas:",
+            "duration": "Duração:",
+            "team": "Equipe:",
+            "role": "Função:",
+            "status": "Status:",
+            "collaborators": "Colaboradores:",
+            "architecture": "Arquitetura:",
+            "database": "Banco de Dados:",
+            "features": "Funcionalidades:",
+            "challenges": "Desafios e Soluções:",
+            "results": "Resultados:",
+            "challenge": "Desafio:",
+            "solution": "Solução:"
+        },
+        "list": [
+            {
+                "title": "Sistema de Automação para Recursos Humanos",
+                "description": "Plataforma integral de automação para o departamento de RH com gestão de folha de pagamento, controle de presença e avaliações de desempenho",
+                "stack": [
+                    "React",
+                    "Node.js",
+                    "PostgreSQL",
+                    "Redis",
+                    "Docker"
+                ],
+                "achievements": [
+                    "Automação de folha de pagamento",
+                    "Controle biométrico",
+                    "Relatórios em tempo real",
+                    "Redução de 70% no tempo administrativo"
+                ],
+                "duration": "6 meses",
+                "team": "2 desenvolvedores",
+                "role": "Desenvolvedor Full Stack & Líder de Equipe",
+                "status": "Concluído - Em produção",
+                "collaborators": [
+                    {
+                        "name": "José Caballero G.",
+                        "role": "Desenvolvedor Full Stack & Líder de Equipe",
+                        "responsibilities": "Arquitetura do sistema, desenvolvimento backend, integração de APIs, gestão do projeto"
+                    },
+                    {
+                        "name": "Camilo Zapata",
+                        "role": "Desenvolvedor Frontend",
+                        "responsibilities": "Desenvolvimento de interfaces, design UX/UI, implementação de dashboards interativos"
+                    }
+                ],
+                "architecture": "Arquitetura de microsserviços com API RESTful, autenticação JWT e sistema de cache com Redis para otimização de consultas",
+                "database": "PostgreSQL com replicação mestre-escravo para alta disponibilidade",
+                "features": [
+                    "Gestão automatizada de folha de pagamento com cálculo de impostos",
+                    "Controle de presença com integração biométrica",
+                    "Sistema de avaliações de desempenho 360°",
+                    "Geração automática de contratos e documentos",
+                    "Dashboard executivo com métricas em tempo real",
+                    "Módulo de recrutamento e seleção",
+                    "Gestão de férias e licenças",
+                    "Relatórios personalizáveis e exportáveis",
+                    "Sistema de notificações por email e SMS",
+                    "Portal de autoatendimento para funcionários"
+                ],
+                "challenges": [
+                    {
+                        "challenge": "Integração com sistema biométrico legado",
+                        "solution": "Desenvolvimento de middleware personalizado para traduzir protocolos proprietários para API REST moderna"
+                    },
+                    {
+                        "challenge": "Cálculos complexos de folha de pagamento com múltiplas variáveis",
+                        "solution": "Implementação de motor de regras configurável com validação em múltiplas camadas"
+                    },
+                    {
+                        "challenge": "Desempenho com grandes volumes de dados",
+                        "solution": "Implementação de sistema de cache com Redis e otimização de queries com índices compostos"
+                    }
+                ],
+                "results": [
+                    "Redução de 70% no tempo de processamento de folha de pagamento",
+                    "Eliminação de 95% dos erros em cálculos manuais",
+                    "Economia de 40 horas/mês em tarefas administrativas",
+                    "Melhoria de 85% na satisfação dos funcionários",
+                    "ROI positivo em 8 meses de implementação"
+                ]
+            },
+            {
+                "title": "Sistema de Automação para Barbearia",
+                "description": "Sistema completo de gestão e automação para barbearia com reservas online, lembretes automáticos e gestão de clientes",
+                "stack": [
+                    "React",
+                    "Node.js",
+                    "MongoDB",
+                    "WhatsApp API"
+                ],
+                "achievements": [
+                    "Reservas automáticas 24/7",
+                    "Lembretes por WhatsApp",
+                    "Gestão de estoque",
+                    "Dashboard de métricas"
+                ],
+                "duration": "3 meses",
+                "team": "1 desenvolvedor",
+                "role": "Desenvolvedor Full Stack",
+                "status": "Concluído",
+                "collaborators": [
+                    {
+                        "name": "José Caballero G.",
+                        "role": "Desenvolvedor Full Stack",
+                        "responsibilities": "Desenvolvimento completo do sistema, integração com WhatsApp Business API"
+                    }
+                ],
+                "architecture": "Aplicação monolítica com separação clara de camadas (apresentação, lógica de negócio, dados)",
+                "database": "MongoDB com esquemas otimizados para consultas frequentes de disponibilidade",
+                "features": [
+                    "Sistema de reservas online com calendário interativo",
+                    "Envio automático de lembretes por WhatsApp",
+                    "Gestão de clientes com histórico de serviços",
+                    "Controle de estoque de produtos",
+                    "Dashboard com métricas de negócio",
+                    "Sistema de fidelização de clientes",
+                    "Relatórios de vendas e serviços",
+                    "Gestão de múltiplos barbeiros"
+                ],
+                "challenges": [
+                    {
+                        "challenge": "Sincronização em tempo real de disponibilidade",
+                        "solution": "Implementação de WebSockets para atualização instantânea do calendário"
+                    },
+                    {
+                        "challenge": "Integração com WhatsApp Business API",
+                        "solution": "Desenvolvimento de serviço de mensagens com fila de prioridade e tentativas automáticas"
+                    }
+                ],
+                "results": [
+                    "Aumento de 45% nas reservas mensais",
+                    "Redução de 80% nas faltas graças aos lembretes",
+                    "Melhoria de 60% na gestão de estoque",
+                    "Economia de 15 horas/semana em gestão administrativa"
+                ]
+            },
+            {
+                "title": "Site para Ótica Premium",
+                "description": "Site moderno para ótica com catálogo de produtos, prova virtual de óculos e sistema de agendamento online",
+                "stack": [
+                    "React",
+                    "Tailwind CSS",
+                    "Firebase",
+                    "AR.js"
+                ],
+                "achievements": [
+                    "Catálogo interativo",
+                    "Prova virtual de óculos",
+                    "Sistema de agendamento",
+                    "Design responsivo"
+                ],
+                "duration": "2 meses",
+                "team": "1 desenvolvedor",
+                "role": "Desenvolvedor Frontend",
+                "status": "Concluído",
+                "collaborators": [
+                    {
+                        "name": "José Caballero G.",
+                        "role": "Desenvolvedor Frontend",
+                        "responsibilities": "Desenvolvimento frontend, implementação de realidade aumentada, design responsivo"
+                    }
+                ],
+                "architecture": "Single Page Application (SPA) com Firebase como backend-as-a-service",
+                "database": "Firebase Firestore para armazenamento em tempo real",
+                "features": [
+                    "Catálogo de produtos com filtros avançados",
+                    "Prova virtual de óculos usando webcam",
+                    "Sistema de agendamento online com Google Calendar",
+                    "Carrinho de compras com cotação",
+                    "Blog de saúde visual",
+                    "Galeria de clientes satisfeitos",
+                    "Formulário de contato integrado",
+                    "Otimização SEO"
+                ],
+                "challenges": [
+                    {
+                        "challenge": "Implementação de prova virtual precisa",
+                        "solution": "Uso de AR.js com detecção facial e ajuste automático de escala"
+                    }
+                ],
+                "results": [
+                    "Aumento de 120% nas consultas online",
+                    "Redução de 50% no tempo de atendimento presencial",
+                    "Melhoria de 90% na experiência do usuário"
+                ]
+            },
+            {
+                "title": "E-commerce de Calçados",
+                "description": "Loja online completa para loja de calçados com carrinho de compras, gateway de pagamento e gestão de estoque em tempo real",
+                "stack": [
+                    "Next.js",
+                    "Stripe",
+                    "PostgreSQL",
+                    "Tailwind CSS"
+                ],
+                "achievements": [
+                    "Carrinho de compras",
+                    "Pagamentos seguros",
+                    "Gestão de estoque",
+                    "Painel administrativo"
+                ],
+                "duration": "4 meses",
+                "team": "1 desenvolvedor",
+                "role": "Desenvolvedor Full Stack",
+                "status": "Concluído - Em produção",
+                "collaborators": [
+                    {
+                        "name": "José Caballero G.",
+                        "role": "Desenvolvedor Full Stack",
+                        "responsibilities": "Desenvolvimento completo, integração de pagamentos, otimização de desempenho"
+                    }
+                ],
+                "architecture": "Next.js com Server-Side Rendering (SSR) para melhor SEO e desempenho",
+                "database": "PostgreSQL com índices otimizados para buscas de produtos",
+                "features": [
+                    "Catálogo de produtos com busca avançada",
+                    "Carrinho de compras persistente",
+                    "Integração com Stripe para pagamentos seguros",
+                    "Sistema de envios com rastreamento",
+                    "Painel administrativo completo",
+                    "Gestão de estoque em tempo real",
+                    "Sistema de descontos e cupons",
+                    "Avaliações e classificações de produtos",
+                    "Lista de desejos e comparador de produtos",
+                    "Notificações de estoque"
+                ],
+                "challenges": [
+                    {
+                        "challenge": "Sincronização de estoque em tempo real",
+                        "solution": "Implementação de sistema de eventos com atualização otimista e reconciliação"
+                    },
+                    {
+                        "challenge": "Otimização de imagens de produtos",
+                        "solution": "Uso de Next.js Image Optimization com lazy loading e formatos modernos (WebP)"
+                    }
+                ],
+                "results": [
+                    "Vendas online aumentaram 200% em 3 meses",
+                    "Tempo de carregamento reduzido para menos de 2 segundos",
+                    "Taxa de conversão de 3,5%",
+                    "Redução de 60% nas consultas de estoque"
+                ]
+            },
+            {
+                "title": "Landing Page para Restaurante",
+                "description": "Site atraente para restaurante com menu digital, reservas online e integração com redes sociais",
+                "stack": [
+                    "React",
+                    "Tailwind CSS",
+                    "Google Maps API",
+                    "EmailJS"
+                ],
+                "achievements": [
+                    "Menu digital interativo",
+                    "Sistema de reservas",
+                    "Galeria de fotos",
+                    "Formulário de contato"
+                ],
+                "duration": "1 mês",
+                "team": "1 desenvolvedor",
+                "role": "Desenvolvedor Frontend",
+                "status": "Concluído",
+                "collaborators": [
+                    {
+                        "name": "José Caballero G.",
+                        "role": "Desenvolvedor Frontend",
+                        "responsibilities": "Design e desenvolvimento frontend, otimização de imagens, integração de APIs"
+                    }
+                ],
+                "architecture": "Static Site Generation com otimização de assets",
+                "database": "Não requer banco de dados - conteúdo estático",
+                "features": [
+                    "Menu digital com categorias e filtros",
+                    "Galeria de fotos profissional",
+                    "Sistema de reservas integrado",
+                    "Mapa interativo com localização",
+                    "Integração com redes sociais",
+                    "Formulário de contato funcional",
+                    "Design responsivo e moderno",
+                    "Otimização SEO local"
+                ],
+                "challenges": [],
+                "results": [
+                    "Aumento de 80% nas reservas online",
+                    "Melhoria de 95% na presença digital",
+                    "Redução de 40% nas chamadas telefônicas"
+                ]
+            },
+            {
+                "title": "Sistema de Gestão para Academia",
+                "description": "Plataforma completa para gestão de academia com controle de mensalidades, aulas e rotinas personalizadas",
+                "stack": [
+                    "React",
+                    "Node.js",
+                    "MySQL",
+                    "Chart.js"
+                ],
+                "achievements": [
+                    "Controle de mensalidades",
+                    "Calendário de aulas",
+                    "Rotinas personalizadas",
+                    "Relatórios de progresso"
+                ],
+                "duration": "5 meses",
+                "team": "1 desenvolvedor",
+                "role": "Desenvolvedor Full Stack",
+                "status": "Concluído - Em produção",
+                "collaborators": [
+                    {
+                        "name": "José Caballero G.",
+                        "role": "Desenvolvedor Full Stack",
+                        "responsibilities": "Arquitetura do sistema, desenvolvimento full stack, implementação de métricas"
+                    }
+                ],
+                "architecture": "API RESTful com autenticação baseada em funções",
+                "database": "MySQL com normalização 3NF para integridade de dados",
+                "features": [
+                    "Gestão de mensalidades e pagamentos",
+                    "Controle de acesso com cartões RFID",
+                    "Calendário de aulas coletivas",
+                    "Rotinas personalizadas por instrutor",
+                    "Acompanhamento de progresso com gráficos",
+                    "Sistema de reservas de aulas",
+                    "Dashboard para instrutores",
+                    "App móvel para membros",
+                    "Relatórios financeiros",
+                    "Sistema de notificações"
+                ],
+                "challenges": [
+                    {
+                        "challenge": "Gestão de capacidade de aulas em tempo real",
+                        "solution": "Sistema de reservas com bloqueio otimista e lista de espera automática"
+                    },
+                    {
+                        "challenge": "Acompanhamento preciso de progresso físico",
+                        "solution": "Implementação de algoritmos de análise de dados com visualização interativa"
+                    }
+                ],
+                "results": [
+                    "Redução de 85% no tempo de check-in",
+                    "Aumento de 40% na participação em aulas",
+                    "Melhoria de 75% na retenção de membros",
+                    "Economia de 25 horas/semana em administração"
+                ]
+            },
+            {
+                "title": "Portal Web para Imobiliária",
+                "description": "Site profissional para imobiliária com busca avançada de imóveis, tours virtuais e sistema de contato",
+                "stack": [
+                    "React",
+                    "Google Maps API",
+                    "Firebase",
+                    "Tailwind CSS"
+                ],
+                "achievements": [
+                    "Busca avançada",
+                    "Tours virtuais 360°",
+                    "Filtros inteligentes",
+                    "Sistema de favoritos"
+                ],
+                "duration": "3 meses",
+                "team": "1 desenvolvedor",
+                "role": "Desenvolvedor Full Stack",
+                "status": "Concluído",
+                "collaborators": [
+                    {
+                        "name": "José Caballero G.",
+                        "role": "Desenvolvedor Full Stack",
+                        "responsibilities": "Desenvolvimento completo, integração de mapas, implementação de tours virtuais"
+                    }
+                ],
+                "architecture": "Progressive Web App (PWA) com capacidades offline",
+                "database": "Firebase Firestore com índices compostos para buscas complexas",
+                "features": [
+                    "Busca avançada com múltiplos filtros",
+                    "Tours virtuais 360° de imóveis",
+                    "Mapa interativo com imóveis",
+                    "Sistema de favoritos e comparação",
+                    "Calculadora de financiamento",
+                    "Formulário de contato por imóvel",
+                    "Painel administrativo para corretores",
+                    "Notificações de novos imóveis",
+                    "Integração com redes sociais",
+                    "Otimização SEO por imóvel"
+                ],
+                "challenges": [
+                    {
+                        "challenge": "Carregamento rápido de tours virtuais 360°",
+                        "solution": "Implementação de lazy loading progressivo com pré-carregamento inteligente"
+                    },
+                    {
+                        "challenge": "Busca eficiente com múltiplos critérios",
+                        "solution": "Uso de índices compostos no Firestore e cache de resultados frequentes"
+                    }
+                ],
+                "results": [
+                    "Aumento de 150% nas consultas de imóveis",
+                    "Redução de 60% em visitas presenciais desnecessárias",
+                    "Melhoria de 90% na experiência de busca",
+                    "Aumento de 70% no fechamento de vendas"
+                ]
+            }
+        ]
+    },
+    "experience": {
+        "title": "Experiência",
+        "subtitle": "Minha trajetória profissional em desenvolvimento de software e automação de processos",
+        "list": [
+            {
+                "company": "SENA – SENNOVA",
+                "position": "Desenvolvedor de Software – Automação",
+                "period": "Junho 2025 – Dezembro 2025",
+                "responsibilities": [
+                    "Desenvolvimento de aplicações web para projetos tecnológicos do SENA",
+                    "Design e implementação de processos automatizados através de fluxos n8n e Make",
+                    "Integração de plataformas através de APIs, Webhooks e ferramentas de automação",
+                    "Gestão de dados e APIs para otimizar tarefas administrativas e operacionais",
+                    "Suporte técnico e melhoria contínua de fluxos automatizados"
+                ]
+            },
+            {
+                "company": "Projetos Independentes (Freelance)",
+                "position": "Desenvolvedor Full Stack & Automação",
+                "period": "2025 – Presente",
+                "responsibilities": [
+                    "Desenvolvimento de interfaces web e sistemas internos com React",
+                    "Implementação de fluxos automatizados para envio de dados, notificações e controle de processos",
+                    "Integração de plataformas através de APIs, Webhooks e ferramentas de automação"
+                ]
+            }
+        ]
+    },
+    "certifications": {
+        "title": "Certificações",
+        "subtitle": "Formação contínua em tecnologias cloud e desenvolvimento de software",
+        "list": [
+            {
+                "title": "AWS Cloud Practitioner Essentials",
+                "issuer": "AWS Skill Builder"
+            },
+            {
+                "title": "AWS Technical Essentials",
+                "issuer": "AWS Skill Builder"
+            },
+            {
+                "title": "AWS Database Offerings",
+                "issuer": "AWS Skill Builder"
+            },
+            {
+                "title": "Inglês Técnico e Conversacional",
+                "issuer": "SENA"
+            }
+        ]
+    },
+    "contact": {
+        "title": "Contato",
+        "subtitle": "Tem um projeto em mente? Vamos conversar! Estou disponível para novas oportunidades",
+        "info": "Informações de Contato",
+        "email": "Email",
+        "phone": "Telefone",
+        "social": "Redes Sociais",
+        "form": {
+            "name": "Nome",
+            "email": "Email",
+            "subject": "Assunto",
+            "message": "Mensagem",
+            "send": "Enviar Mensagem",
+            "sending": "Enviando...",
+            "success": "Mensagem enviada com sucesso! Responderei em breve.",
+            "error": "Houve um erro ao enviar a mensagem. Tente novamente."
+        }
+    },
+    "faq": {
+        "title": "Perguntas Frequentes",
+        "subtitle": "Respostas a perguntas técnicas comuns em entrevistas",
+        "questions": [
+            {
+                "question": "O que é uma API REST e como você a utilizou?",
+                "answer": "Uma API REST é uma interface que permite a comunicação entre sistemas usando HTTP. Trabalhei com APIs REST em vários projetos, consumiendo endpoints para obter dados de usuários, criar registros e atualizar informações. Por exemplo, no projeto DataExplorer integrei a API JSONPlaceholder para exibir usuários e posts em tempo real."
+            },
+            {
+                "question": "Como você lida com erros em JavaScript?",
+                "answer": "Uso try-catch para capturar erros síncronos e .catch() para promessas. Sempre valido dados de entrada, lido com casos extremos e mostro mensagens claras aos usuários. Em meus projetos implemento tratamento de erros tanto no frontend quanto no backend, registrando erros para depuração e exibindo mensagens amigáveis ao usuário."
+            },
+            {
+                "question": "Que experiência você tem com bancos de dados?",
+                "answer": "Trabalhei com PostgreSQL e MongoDB. No PostgreSQL projeto esquemas normalizados, crio índices para otimizar consultas e gerencio relacionamentos entre tabelas. Com MongoDB trabalho com documentos JSON, implemento agregações e otimizo consultas. Também tenho experiência com ORMs como Prisma para facilitar operações de banco de dados."
+            },
+            {
+                "question": "O que é Git e como você o usa em seu fluxo de trabalho?",
+                "answer": "Git é um sistema de controle de versão que uso diariamente. Crio branches para novos recursos, faço commits descritivos, uso pull requests para revisão de código e resolvo conflitos quando necessário. Sigo as melhores práticas como commits atômicos e mensagens claras. Também uso GitHub para colaboração e implantação contínua."
+            },
+            {
+                "question": "Como você otimiza o desempenho de uma aplicação web?",
+                "answer": "Otimizo através de lazy loading de componentes, minimizo re-renders desnecessários com React.memo, uso debouncing em buscas, implemento cache com localStorage ou Redis, otimizo imagens com formatos modernos como WebP, e uso code splitting. Também monitoro métricas de desempenho com ferramentas como Lighthouse."
+            },
+            {
+                "question": "Quais ferramentas de automação você conhece?",
+                "answer": "Tenho experiência com n8n e Make (Integromat) para automatizar processos empresariais. Criei fluxos que conectam APIs, processam webhooks, enviam notificações automáticas e sincronizam dados entre sistemas. Também trabalhei com Zapier para integrações mais simples e scripts personalizados com Node.js para automações específicas."
+            }
+        ]
+    },
+    "projectModal": {
+        "duration": "Duração",
+        "team": "Equipe",
+        "role": "Papel",
+        "status": "Status",
+        "devTeam": "Equipe de Desenvolvimento",
+        "techDetails": "Detalhes Técnicos",
+        "stack": "Stack Tecnológico",
+        "architecture": "Arquitetura",
+        "database": "Banco de Dados",
+        "features": "Principais Recursos",
+        "challenges": "Desafios e Soluções",
+        "results": "Resultados"
+    },
+    "footer": {
+        "rights": "Todos os direitos reservados."
+    }
+}

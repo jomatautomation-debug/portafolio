@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Server, Code, Zap, Wrench, Grid } from 'lucide-react'
 import Section from './ui/Section'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const SkillCard = ({ skill }) => {
     const [isHovered, setIsHovered] = useState(false)
@@ -39,44 +40,17 @@ const SkillCard = ({ skill }) => {
 }
 
 const Skills = () => {
+    const { t } = useLanguage()
     const [activeCategory, setActiveCategory] = useState('backend')
 
     const categories = [
-        { id: 'backend', name: 'Backend', icon: Server },
-        { id: 'frontend', name: 'Frontend', icon: Code },
-        { id: 'automation', name: 'Automatización', icon: Zap },
-        { id: 'tools', name: 'Herramientas', icon: Wrench }
+        { id: 'backend', name: t('skills.categories.backend'), icon: Server },
+        { id: 'frontend', name: t('skills.categories.frontend'), icon: Code },
+        { id: 'automation', name: t('skills.categories.automation'), icon: Zap },
+        { id: 'tools', name: t('skills.categories.tools'), icon: Wrench }
     ]
 
-    const allSkills = [
-        // Backend
-        { name: 'Node.js', color: 'accent-green', category: 'backend', description: 'Entorno de ejecución para JavaScript en servidor' },
-        { name: 'MySQL', color: 'accent-blue', category: 'backend', description: 'Gestión de bases de datos relacionales robustas' },
-        { name: 'PostgreSQL', color: 'accent-blue', category: 'backend', description: 'Base de datos relacional avanzada y potente' },
-        { name: 'MongoDB', color: 'accent-green', category: 'backend', description: 'Base de datos NoSQL para datos flexibles' },
-        { name: 'REST APIs', color: 'accent-orange', category: 'backend', description: 'Diseño de servicios web estándar y escalables' },
-
-        // Frontend
-        { name: 'React', color: 'accent-blue', category: 'frontend', description: 'Biblioteca líder para interfaces de usuario' },
-        { name: 'Vite', color: 'accent-orange', category: 'frontend', description: 'Herramienta de construcción frontend ultrarrápida' },
-        { name: 'JavaScript', color: 'accent-orange', category: 'frontend', description: 'Lenguaje fundamental para la web interactiva' },
-        { name: 'Tailwind CSS', color: 'accent-blue', category: 'frontend', description: 'Framework de utilidades para diseño rápido' },
-        { name: 'HTML & CSS', color: 'accent-orange', category: 'frontend', description: 'Estructura y estilo fundamentales de la web' },
-
-        // Automation
-        { name: 'n8n', color: 'accent-green', category: 'automation', description: 'Automatización de flujos de trabajo personalizables' },
-        { name: 'Make', color: 'accent-blue', category: 'automation', description: 'Plataforma visual de integración de apps' },
-        { name: 'Zapier', color: 'accent-orange', category: 'automation', description: 'Conector de aplicaciones web líder' },
-        { name: 'Webhooks', color: 'accent-green', category: 'automation', description: 'Comunicación en tiempo real entre sistemas' },
-
-        // Tools
-        { name: 'VS Code', color: 'accent-blue', category: 'tools', description: 'El editor de código más potente y versátil' },
-        { name: 'Git', color: 'accent-orange', category: 'tools', description: 'Sistema de control de versiones esencial' },
-        { name: 'GitHub', color: 'accent-primary', category: 'tools', description: 'Colaboración y alojamiento de código' },
-        { name: 'Postman', color: 'accent-orange', category: 'tools', description: 'Pruebas y desarrollo de APIs' },
-        { name: 'Docker', color: 'accent-blue', category: 'tools', description: 'Contenedores para despliegue consistente' },
-        { name: 'NPM', color: 'accent-green', category: 'tools', description: 'Gestor de paquetes para JavaScript' },
-    ]
+    const allSkills = t('skills.list')
 
     const currentSkills = allSkills.filter(skill => skill.category === activeCategory)
 
@@ -96,11 +70,11 @@ const Skills = () => {
             >
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
                     <span className="bg-gradient-to-r from-accent-blue to-accent-green bg-clip-text text-transparent">
-                        Habilidades Técnicas
+                        {t('skills.title')}
                     </span>
                 </h2>
                 <p className="text-text-secondary max-w-2xl mx-auto mb-8">
-                    Selecciona una categoría para ver mis herramientas
+                    {t('skills.subtitle')}
                 </p>
 
                 {/* Category Tabs */}
